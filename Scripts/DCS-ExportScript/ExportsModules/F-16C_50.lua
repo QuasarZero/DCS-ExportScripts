@@ -699,18 +699,18 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	
 	ExportScript.EcmPanel(mainPanelDevice)
 	ExportScript.FuelInfo(mainPanelDevice)	
-	ExportScript.UhfRadioPresets(mainPanelDevice)	
+  ExportScript.UhfRadioPresets(mainPanelDevice)	
   
-  --if LoIsObjectExportAllowed() then -- returns true if world objects data is available
-    --if LoIsOwnshipExportAllowed() then -- returns true if ownship data is available
-  --ExportScript.LoAircraftInfo(mainPanelDevice) -- Provides a lot of aircraft properties
-  --ExportScript.AirportInfo(mainPanelDevice) -- Provides info on the two closest airports
-  --ExportScript.WindsAloft(mainPanelDevice) -- Gets winds at the aircraft
-  --ExportScript.GroundRadar(mainPanelDevice) -- Reports 2 closest friendlies and 2 enemies (Use in Single Player)
-  --ExportScript.AirRadar(mainPanelDevice) -- Reports 2 closest friendlies and 2 enemies (Use in Single Player)
-  --ExportScript.IglaHunter(mainPanelDevice) -- Locates closest Igla (Use in Single Player)
-    --end
-  --end
+  if LoIsObjectExportAllowed() then -- returns true if world objects data is available
+    if LoIsOwnshipExportAllowed() then -- returns true if ownship data is available
+  ExportScript.LoAircraftInfo(mainPanelDevice) -- Provides a lot of aircraft properties
+  ExportScript.AirportInfo(mainPanelDevice) -- Provides info on the two closest airports
+  ExportScript.WindsAloft(mainPanelDevice) -- Gets winds at the aircraft
+  ExportScript.GroundRadar(mainPanelDevice) -- Reports 2 closest friendlies and 2 enemies (Use in Single Player)
+  ExportScript.AirRadar(mainPanelDevice) -- Reports 2 closest friendlies and 2 enemies (Use in Single Player)
+  ExportScript.IglaHunter(mainPanelDevice) -- Locates closest Igla (Use in Single Player)
+    end
+  end
   
   -- TODO FIX: If cold start online then this blocks exports after it. Keep this last.
   ExportScript.CountermeasureReadouts(mainPanelDevice) 
@@ -1683,6 +1683,16 @@ function ExportScript.WindsAloft(mainPanelDevice)
                                     .. round(metersPerSecond2knots(windStrengthAloft,0)) .. 'kts'
                               ) -- winds at the aircraft
 end
+
+function ExportScript.SplitString(str)
+  local first_space = string.find(str, " ")
+  if first_space ~= nil then
+    return string.sub(str, 1, first_space - 1)
+  else
+    return str
+  end
+end
+
 function ExportScript.GroundRadar(mainPanelDevice) -- may return some odd things
   
   local tableOfUnits = LoGetWorldObjects('units')
@@ -1748,7 +1758,7 @@ function ExportScript.GroundRadar(mainPanelDevice) -- may return some odd things
   
   local string_8200 = 'No Ground\nEnemy\nDetected'
   if tableOfGround_enemyReports[1] ~= nill then
-    string_8200 = 'Enemy Ground\n' .. tableOfGround_enemyReports[1][1]
+    string_8200 = 'Ground\n\n' .. ExportScript.SplitString(tableOfGround_enemyReports[1][1])
                 .. '\n ' .. prefixZerosFixedLength(tableOfGround_enemyReports[1][3],3) -- bearing
                 .. 'º  ' .. round(tableOfGround_enemyReports[1][2],0) .. 'nm'--distance
   end
@@ -1849,7 +1859,7 @@ function ExportScript.AirRadar(mainPanelDevice)
   
   local string_8210 = 'No Air\nEnemy\nDetected'
   if tableOfAircraft_enemyReports[1] ~= nill then
-    string_8210 = 'Enemy Air\n' .. tableOfAircraft_enemyReports[1][1]
+    string_8210 = 'Aircraft\n\n' .. ExportScript.SplitString(tableOfAircraft_enemyReports[1][1])
                 .. '\n ' .. prefixZerosFixedLength(tableOfAircraft_enemyReports[1][3],3) -- bearing
                 .. 'º  ' .. round(tableOfAircraft_enemyReports[1][2],0) .. 'nm'--distance
   end
@@ -1925,7 +1935,7 @@ function ExportScript.IglaHunter(mainPanelDevice) -- Locates the nearest Igla
   
   local string_8666 = 'Igla Hunter\nSearching...'
   if tableOfIgla_report[1] ~= nill then
-    string_8666 = 'Igla Detected\n' .. tableOfIgla_report[1][1]
+    string_8666 = 'Igla\nDetected\n\n' .. ExportScript.SplitString(tableOfIgla_report[1][1])
                                         .. '\n ' .. prefixZerosFixedLength(tableOfIgla_report[1][3],3) -- bearing
                                         .. 'º  ' .. round(tableOfIgla_report[1][2],0) .. ' nm'--distance
   end
