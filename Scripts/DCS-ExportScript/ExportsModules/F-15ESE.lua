@@ -1056,6 +1056,7 @@ function Mech_Data(Option)	-- The standard LoMAC Mech data extracted and formatt
 	mechanisationStatus = LoGetMechInfo()
 	--SPDBRK_Status = mechanisationStatus.speedbrakes.status
     SPDBRK_Value = string.format("%1d",(mechanisationStatus.speedbrakes.value * 100)).."%"
+	ExportScript.Tools.SendData(16579, string.format("%.2f", mechanisationStatus.speedbrakes.value))
 	return _G[Option]
 	end
 
