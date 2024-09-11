@@ -1640,17 +1640,21 @@ end
 function ExportScript.AF.FC_Russian_FlareChaff_MiG29(FunctionTyp)
 	local lFunctionTyp = FunctionTyp or "Ikarus"
 	local lSnares = LoGetSnares() -- Flare and Chaff
-	--ExportScript.Tools.WriteToLog('lSnares: '..ExportScript.Tools.dump(lSnares))
+	-- ExportScript.Tools.WriteToLog('lSnares: '..ExportScript.Tools.dump(lSnares))
 
 	--[chaff] = number: "30"
 	--[flare] = number: "30"
 
 	if ExportScript.Config.DACExport and lFunctionTyp == "DAC" then
-		ExportScript.Tools.SendDataDAC(800, lSnares.chaff + lSnares.flare )
+		ExportScript.Tools.SendDataDAC(800, lSnares.chaff + lSnares.flare)
+		ExportScript.Tools.SendDataDAC(1801, lSnares.chaff)
+		ExportScript.Tools.SendDataDAC(1802, lSnares.flare)
 	end
 	
 	if ExportScript.Config.IkarusExport and lFunctionTyp == "Ikarus" then
-		ExportScript.Tools.SendData(800, lSnares.chaff + lSnares.flare )
+		ExportScript.Tools.SendData(800, lSnares.chaff + lSnares.flare)
+		ExportScript.Tools.SendData(1801, lSnares.chaff)
+		ExportScript.Tools.SendData(1802, lSnares.flare)
 	end
 end
 

@@ -105,6 +105,24 @@ function ExportScript.ProcessIkarusFCHighImportanceConfig()
 		local lAltBarTmp				= lAltBar * 3.28084										-- meter to feeds
 		local lAltBarTmp2				= ((lAltBar * 3.28084) / 100)							-- meter to feeds
 
+
+        -- Export atmosphere pressure indicator
+        -- Because the damn ED has hidden the inHg value in the altimeter!
+        local AtmospherePressureFor_mmHg = ExportScript.Tools.round(lBasicAtmospherePressure, 2)
+        local AtmospherePressureFor_inHg = ExportScript.Tools.round(AtmospherePressureFor_mmHg / 25.4, 2)
+        local AtmospherePressureFor_kPa  = ExportScript.Tools.round(AtmospherePressureFor_mmHg * 0.133322, 2)
+        -- mmHg
+        ExportScript.Tools.SendData(1011, AtmospherePressureFor_mmHg)
+        ExportScript.Tools.SendData(1021, AtmospherePressureFor_mmHg..'\ninHg')
+        -- inHg
+        ExportScript.Tools.SendData(1012, AtmospherePressureFor_inHg)
+        ExportScript.Tools.SendData(1022, AtmospherePressureFor_inHg..'\nmmHg')
+        -- kPa
+        ExportScript.Tools.SendData(1013, AtmospherePressureFor_kPa)
+        ExportScript.Tools.SendData(1023, AtmospherePressureFor_kPa..'\nkPa')
+        -- Combine mmHg, inHg, kPa
+        ExportScript.Tools.SendData(1025, AtmospherePressureFor_inHg..' inHg\n'..AtmospherePressureFor_mmHg..' mmHg\n'..AtmospherePressureFor_kPa..' kPa')
+
 		lAltBarTmp = lAltBarTmp / 1000
 		lAltBarTmp = lAltBarTmp - ExportScript.Tools.round(lAltBarTmp, 0, "floor")
 
