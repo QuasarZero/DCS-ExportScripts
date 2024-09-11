@@ -34,7 +34,6 @@ ExportScript.ConfigEveryFrameArguments =
 	[242] = "%.4f",   -- HydIndBrake {0.0, 1000.0, 2000.0, 3000.0, 4000.0, 5000.0}{0.0, 0.036, 0.338, 0.636, 0.924, 1.0}
 	-- Gear Interface
 	[228] = "%.4f",   -- EmergGearDownHandle
-	[240] = "%.4f",   -- EmergParkBrakeHandle
 	-- Instruments --------------------------
     -- Standby Pressure Altimeter AAU-52/A
 	[218] = "%.4f",   -- Altimeter_100_footPtr {0.0, 1000.0} {0.0, 1.0}
@@ -165,18 +164,15 @@ ExportScript.ConfigEveryFrameArguments =
 	[468] = "%1d",   -- IFEI
 	[469] = "%1d",   -- IFEI_buttons
 	-- RWR
-	[276] = "%1d",   -- Lower
-	--[273] = "%1d",   -- Limit
+	[276] = "%.1f",   -- Lower
 	[273] = "%.1f",   -- Limit
-	[274] = "%1d",   -- Display
-	--[270] = "%1d",   -- SpecialEn
-	[271] = "%1d",   -- Special
-	--[267] = "%1d",   -- Enable
+	[274] = "%.1f",   -- Display
+	--[270] = "%.1f",   -- SpecialEn
+	[271] = "%.1f",   -- Special
 	[267] = "%.1f",   -- Enable
-	[268] = "%1d",   -- Offset
-	--[264] = "%1d",   -- Fail
+	[268] = "%.1f",   -- Offset
 	[264] = "%.1f",   -- Fail
-	[265] = "%1d",   -- Bit
+	[265] = "%.1f",   -- Bit
 	[520] = "%.1f",   -- RwrLightsBrightness
 	-- CMDS
 	[516] = "%1d",   -- ecmJett  
@@ -230,7 +226,7 @@ ExportScript.ConfigArguments =
 	[368] = "%1d",   -- MC Switch, 1 OFF/NORM/2 OFF {-1.0,0.0,1.0}
 	-- Power Plant
 	[375] = "%1d",   -- APU Control Switch, ON/OFF
-	[377] = "%1d",   -- Engine Crank Switch, LEFT/OFF/RIGHT {-1.0,0.0,1.0}
+	[377] = "%1d",   -- Engine Crank Switch, LEFT/OFF/RIGHT {-1,0,1}
 	[331] = "%1d",   -- Fire and Bleed Air Test Switch, (RMB) TEST A/(LMB) TEST B {-1.0,0.0,1.0}
 	-- Hydraulic system
 	[369] = "%1d",   -- Hydraulic Isolate Override Switch, NORM/ORIDE
@@ -239,8 +235,8 @@ ExportScript.ConfigArguments =
 	[228] = "%1d",   -- Landing Gear Control Handle, (MW)EMERGENCY DOWN {0.0,1.0} ???
 	[229] = "%1d",   -- Down Lock Override Button - Push to unlock
 	[238] = "%1d",   -- Anti Skid Switch, ON/OFF
-	[240] = "%.3f",   -- Emergency/Parking Brake Handle, (MW)Pull-Stow {0.0,1.0} in 0.001 Steps ???
-	[241] = "%.3f",   -- Emergency/Parking Brake Handle, (LMB)Rotate Left/(RMB)Rotate Right ???
+	[240] = "%.1f",   -- Emergency/Parking Brake Handle, (0.0: PUSH, 0.5: EMER PULL, 1.0: PARK PULL)
+	[241] = "%.1f",   -- Emergency/Parking Brake Handle, (0.0: EMER, 0.7: PARK)
 	[233] = "%1d",   -- Launch Bar Control Switch, EXTEND/RETRACT
 	[293] = "%1d",   -- Arresting Hook Handle, UP/DOWN
 	-- Fuel system
@@ -499,9 +495,9 @@ ExportScript.ConfigArguments =
 	-- Helmet
 	[136] = "%.2f",    -- HMD OFF/BRT Knob {0.0,0.75} in 0.01 Steps
 	-- Targeting Pod, FLIR
-	[439] = "%.1f",    -- FLIR Switch, ON/STBY/OFF {0.0,0.5,1.0}
-	[441] = "%.1f",    -- LTD/R Switch, ARM/SAFE/AFT {0.0,0.5,1.0}
-	[442] = "%1d",    -- LST/NFLR Switch, ON/OFF
+	[439] = "%1d",    -- FLIR Switch, ON/STBY/OFF {-1,0,1}
+	[441] = "%1d",    -- LTD/R Switch, ARM/SAFE {0,1}
+	[442] = "%1d",    -- LST/NFLR Switch, ON/OFF {0,1}
 }
 
 -----------------------------
