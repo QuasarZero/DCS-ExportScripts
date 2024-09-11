@@ -555,8 +555,8 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[451]	= "%.1f",	-- PILOT Nuclear Consent Switch  ( DEVICE_ID: 17 DCS_ID: 3451)
 			[450]	= "%.1f",	-- PILOT Nuclear Consent Switch Cover  ( DEVICE_ID: 17 DCS_ID: 3450)
 		--  Oxygen Control Panel
-			[552]	= "%.1f",	-- PILOT Oxygen 100%/Normal Switch  ( DEVICE_ID: 26 DCS_ID: 3552)
-			[551]	= "%.1f",	-- PILOT Oxygen Emergency/Normal/Test Switch  ( DEVICE_ID: 26 DCS_ID: 3551)
+			[552]	= "%1d",	-- PILOT Oxygen 100%/Normal Switch  ( DEVICE_ID: 26 DCS_ID: 3552)
+			[551]	= "%1d",	-- PILOT Oxygen Emergency/Normal/Test Switch  ( DEVICE_ID: 26 DCS_ID: 3551)
 			[553]	= "%.1f",	-- PILOT Oxygen Supply/Mode Control Switch  ( DEVICE_ID: 26 DCS_ID: 3553)
 		--  Radio
 			[514]	= "%.1f",	-- PILOT Radio Cypher Text Switch  ( DEVICE_ID: 17 DCS_ID: 3514)
