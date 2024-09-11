@@ -451,8 +451,8 @@ end
 
 function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 
-ExportScript.arrowExample(mainPanelDevice)
-ExportScript.RadioTile(mainPanelDevice)
+    ExportScript.arrowExample(mainPanelDevice)
+    ExportScript.RadioTile(mainPanelDevice)
 
     -- UFCP Text Display Windows 1-4
 	local ufcp_1 = ExportScript.Tools.split(list_indication(3), "%c")[6]
@@ -461,17 +461,17 @@ ExportScript.RadioTile(mainPanelDevice)
 	local ufcp_4 = ExportScript.Tools.split(list_indication(6), "%c")[6]
 	local radio1 = ExportScript.Tools.split(list_indication(7), "%c")[3]
 	local radio2 = ExportScript.Tools.split(list_indication(7), "%c")[8]
-	
-	
+
+
 	-- Temporary fix: DCS-ExportScript uses colons (:) as separation between uplink messages.
-    -- Replace all colons with semicolons for TOT view, TODO: add escape char parsing in streamdeck plugin (ctytler).	
+    -- Replace all colons with semicolons for TOT view, TODO: add escape char parsing in streamdeck plugin (ctytler).
 	ufcp_1 = ufcp_1:gsub(":",";")
 	ufcp_2 = ufcp_2:gsub(":",";")
 	ufcp_3 = ufcp_3:gsub(":",";")
 	ufcp_4 = ufcp_4:gsub(":",";")
 	radio1 = radio1:gsub(":",";")
 	radio1 = radio1:gsub(":",";")
-	
+
 	-- The below logic handles the case where a UFCP display has been selected for entry and
 	-- has blinking "--".
 	-- Additional logic could be added to handle the blinking itself and show the other side
@@ -527,7 +527,6 @@ ExportScript.RadioTile(mainPanelDevice)
 	ExportScript.Tools.SendData(2012, string.format("%-4s", ufcp_4:sub(5,8)))
 	ExportScript.Tools.SendData(2015, string.format("%-4s", radio1:sub(5,8)))
 	ExportScript.Tools.SendData(2018, string.format("%-4s", radio2:sub(5,8)))
-
 end
 
 function ExportScript.ProcessDACConfigLowImportance(mainPanelDevice)
