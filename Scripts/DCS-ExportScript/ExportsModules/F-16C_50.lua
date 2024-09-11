@@ -445,7 +445,7 @@ ExportScript.ConfigArguments =
 	[434]  = "%.1f",   --PTR-AUDIO1-TMB-COMM1-434, COMM 1 (UHF) Mode Knob, COMM 1 (UHF) Mode Knob, , , (-0.5, 0, 1)
 	[435]  = "%.1f",   --PTR-AUDIO1-TMB-COMM2-435, COMM 2 (VHF) Mode Knob, COMM 2 (VHF) Mode Knob, , , (-0.5, 0, 1)
 	-- KY58(42)
-	[708]  = "%1d",   --PTR-KY58-LVR-VOL-708, KY-58 VOLUME Knob, KY-58 VOLUME Knob, , , (0, 0, 1)
+	[708]  = "%.2f",   --PTR-KY58-LVR-VOL-708, KY-58 VOLUME Knob, KY-58 VOLUME Knob, , , (0, 0, 1)
 	[705]  = "%.1f",   --PTR-KY58-LVR-MODE1-705, KY-58 MODE Knob, KY-58 MODE Knob, ,  P/C/LD/RV, (0.1, 0, 0.3)
 	[706]  = "%.1f",   --PTR-KY58-LVR-MODE2-706, KY-58 FILL Knob, KY-58 FILL Knob, ,  Z 1-5/1/2/3/4/5/6/Z ALL, (0.1, 0, 0.7)
 	[705]  = "%.1f",   --PTR-KY58-LVR-MODE1-705, KY-58 MODE Knob, KY-58 MODE Knob, ,  P/C/LD/RV, (-0.1, 0, 0.3)
