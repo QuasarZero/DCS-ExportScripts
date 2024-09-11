@@ -432,7 +432,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[351]	= "%.1f",	-- PILOT Backup ADI Cage/Pitch Adjust Knob  ( DEVICE_ID: 17 DCS_ID: 3351)
 			[350]	= "%.1f",	-- PILOT Backup ADI Cage/Pitch Adjust Pull  ( DEVICE_ID: 17 DCS_ID: 3350)
 			[366]	= "%.1f",	-- PILOT Clock adjust  ( DEVICE_ID: 17 DCS_ID: 3366)
-			[335]	= "%.1f",	-- PILOT Pitch Ratio Switch  ( DEVICE_ID: 18 DCS_ID: 3335)
+			[335]	= "%1d",	-- PILOT Pitch Ratio Switch  ( DEVICE_ID: 18 DCS_ID: 3335)
 			[367]	= "%.1f",	-- PILOT Timer Stop  ( DEVICE_ID: 17 DCS_ID: 3367)
 		--  Fuel
 			[532]	= "%.1f",	-- PILOT External Fuel Transfer  ( DEVICE_ID: 16 DCS_ID: 3532)
@@ -541,7 +541,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[535]	= "%.1f",	-- PILOT Left Inlet Ramp Switch  ( DEVICE_ID: 15 DCS_ID: 3535)
 			[401]	= "%.1f",	-- PILOT Master Caution Button  ( DEVICE_ID: 29 DCS_ID: 3401)
 			[536]	= "%.1f",	-- PILOT Right Inlet Ramp Switch  ( DEVICE_ID: 15 DCS_ID: 3536)
-			[534]	= "%.1f",	-- PILOT Roll Ratio Switch  ( DEVICE_ID: 18 DCS_ID: 3534)
+			[534]	= "%1d",	-- PILOT Roll Ratio Switch  ( DEVICE_ID: 18 DCS_ID: 3534)
 			[342]	= "%.1f",	-- PILOT Rudder Pedal Ajust Handle  ( DEVICE_ID: 18 DCS_ID: 3342)
 		--  Misc Controls
 			[1010]	= "%.1f",	-- Mirror Center Adjust Angle  ( DEVICE_ID: 24 DCS_ID: 3910)
