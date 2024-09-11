@@ -34,7 +34,7 @@ ExportScript.ConfigEveryFrameArguments =
 	[242] = "%.4f",   -- HydIndBrake {0.0, 1000.0, 2000.0, 3000.0, 4000.0, 5000.0}{0.0, 0.036, 0.338, 0.636, 0.924, 1.0}
 	-- Gear Interface
 	[228] = "%.4f",   -- EmergGearDownHandle
-	-- [240] = "%.4f",   -- EmergParkBrakeHandle delete
+	[240] = "%.4f",   -- EmergParkBrakeHandle
 	-- Instruments --------------------------
     -- Standby Pressure Altimeter AAU-52/A
 	[218] = "%.4f",   -- Altimeter_100_footPtr {0.0, 1000.0} {0.0, 1.0}
@@ -184,7 +184,6 @@ ExportScript.ConfigEveryFrameArguments =
 	[149] = "%.4f",	-- heading
 	[150] = "%.4f",	-- pitch
 	[151] = "%.4f",	-- bank
-	
 }
 ExportScript.ConfigArguments = 
 {
@@ -199,6 +198,7 @@ ExportScript.ConfigArguments =
 	[347] = "%1d",   -- GAIN Switch, NORM/ORIDE
 	[234] = "%1d",   -- FLAP Switch, AUTO/HALF/FULL {-1.0,0.0,1.0}
 	[138] = "%1d",   -- Spin Recovery Switch, RCVY/NORM
+	[139] = "%1d",   -- Spin Recovery Switch Cover, OPEN/CLOSE {0.0,1.0}
 	[470] = "%1d",   -- FCS BIT Switch
 	[295] = "%1d",   -- Wing Fold Control Handle, (RMB)CW/(LMB)CCW
 	[296] = "%1d",   -- Wing Fold Control Handle, (MW)PULL/STOW
@@ -208,6 +208,7 @@ ExportScript.ConfigArguments =
 	[402] = "%1d",   -- Left Generator Control Switch, NORM/OFF
 	[403] = "%1d",   -- Right Generator Control Switch, NORM/OFF
 	[378] = "%1d",   -- Generator TIE Control Switch, NORM/RESET
+	[379] = "%1d",   -- Generator TIE Control Cover
 	[336] = "%1d",   -- External Power Switch, RESET/NORM/OFF {-1.0,0.0,1.0}
 	[332] = "%1d",   -- Ground Power Switch 1, A ON/AUTO/B ON {-1.0,0.0,1.0}
 	[333] = "%1d",   -- Ground Power Switch 2, A ON/AUTO/B ON {-1.0,0.0,1.0}
@@ -303,7 +304,6 @@ ExportScript.ConfigArguments =
 	[159] = "%1d",   -- Station Jettison Select Button, RIGHT IN
 	[161] = "%1d",   -- Station Jettison Select Button, RIGHT OUT
 	[235] = "%1d",   -- Selective Jettison Pushbutton
-	--[236] = "%1d",   -- Selective Jettison Knob, L FUS MSL/SAFE/R FUS MSL/ RACK/LCHR /STORES {0.0,0.1,0.2,0.3,0.4}
 	[236] = "%.1f",   -- Selective Jettison Knob, L FUS MSL/SAFE/R FUS MSL/ RACK/LCHR /STORES {0.0,0.1,0.2,0.3,0.4}
 	[135] = "%.1f",   -- IR Cooling Switch, ORIDE/NORM/OFF {0.0,0.1,0.2}
 	-- Fire Systems
@@ -315,7 +315,6 @@ ExportScript.ConfigArguments =
 	[28] = "%1d",   -- Right Engine/AMAD Fire Warning/Extinguisher Light - (RMB) cover control
 	-- Multipurpose Display Group -----------
     -- Head-Up Display
-	--[140] = "%1d",   -- HUD Symbology Reject Switch, NORM/REJ 1/REJ 2 {0.0,0.1,0.2}
 	[140] = "%.1f",   -- HUD Symbology Reject Switch, NORM/REJ 1/REJ 2 {0.0,0.1,0.2}
 	[141] = "%.2f",   -- HUD Symbology Brightness Control Knob {0.0,1.0} in 0.1 Steps
 	[142] = "%1d",   -- HUD Symbology Brightness Selector Knob, DAY/NIGHT
@@ -326,7 +325,6 @@ ExportScript.ConfigArguments =
 	[147] = "%1d",   -- HUD Altitude Switch, BARO/RDR
 	[148] = "%1d",   -- HUD Attitude Selector Switch, INS/AUTO/STBY {-1.0,0.0,1.0}
 	-- Left MDI
-	--[51] = "%1d",   -- Left MDI Brightness Selector Knob, OFF/NIGHT/DAY {0.0,0.1,0.2}
 	[51] = "%.1f",   -- Left MDI Brightness Selector Knob, OFF/NIGHT/DAY {0.0,0.1,0.2}
 	[52] = "%.2f",   -- Left MDI Brightness Control Knob {0.0,1.0} in 0.1 Steps
 	[53] = "%.2f",   -- Left MDI Contrast Control Knob {0.0,1.0} in 0.1 Steps
@@ -534,7 +532,7 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	ExportScript.Tools.SendData("ExportID", "Format")
 	ExportScript.Tools.SendData(2000, string.format("%7.3f", lUHFRadio:get_frequency()/1000000)) <- special function for get frequency data
 	]]
-	 
+	
 	--this "calls" the function. the actual function is located at the bottom of the file
 	ExportScript.TripleFireFeature(mainPanelDevice)
 	-- Kneeboard Info. Contains Name of carrier, callsign, ATC freq, tacan, ils, and link4
@@ -543,7 +541,6 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	--ExportScript.Tools.WriteToLog('list_cockpit_params(): '..ExportScript.Tools.dump(list_cockpit_params()))
 	
 	-- IFEI - Engine, Fuel and Clock informations
-	
 	local lEngineFuelClock = ExportScript.Tools.getListIndicatorValue(5)
 	if ExportScript.Config.Debug then
 		ExportScript.Tools.WriteToLog('EngineFuelClock: '..ExportScript.Tools.dump(lEngineFuelClock))
@@ -604,7 +601,7 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 		ExportScript.Tools.SendData(2020, ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadString1Display, 2)) -- ScratchPadString1Display 2 character
 		ExportScript.Tools.SendData(2021, ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadString2Display, 2)) -- ScratchPadString2Display 2 character
 		ExportScript.Tools.SendData(2022, ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadNumberDisplay, 7)) -- ScratchPadNumberDisplay 7 character
-		ExportScript.Tools.SendData(2090, ExportScript.Tools.DisplayFormat( lUFCDisplays.UFC_ScratchPadString1Display .. lUFCDisplays.UFC_ScratchPadString2Display, 4) .. "\n" .. ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadNumberDisplay, 7)) -- ScratchPadString2Display all characters
+		ExportScript.Tools.SendData(2090, ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadString1Display .. lUFCDisplays.UFC_ScratchPadString2Display, 4) .. "\n" .. ExportScript.Tools.DisplayFormat(lUFCDisplays.UFC_ScratchPadNumberDisplay, 7)) -- ScratchPadString2Display all characters
 
 		local lTmpCueing = " "
 		-- Option Displays
@@ -737,28 +734,28 @@ end
 
 
 function ExportScript.TripleFireFeature(mainPanelDevice)
-	--This function will get the status of the three fire lights. 
+	--This function will get the status of the three fire lights.
 	--When a light is lit, its text will be exported
-	
+
 	--we will make the variable 'light_leftEngFireValue'
 	--it will contain the value of the light animation for the left engine fire light
 	local light_leftEngFireValue = mainPanelDevice:get_argument_value(10)
 
 	--'light_rightEngFireValue' will contain the value of the light animation for the right engine fire light
 	local light_rightEngFireValue = mainPanelDevice:get_argument_value(26)
-	
+
 	--'light_apuFireValue' will contain the value of the light animation for the apu fire light
 	local light_apuFireValue = mainPanelDevice:get_argument_value(29)
-	
+
 	--now that we have all of the values, we have to create some logic to see if any of them are on
-	
+
 	--a variable that begins with "is" can be considered a boolean,
 	--which means we will make it true or false, represented by 1 or 0, respectively
-	
+
 	local isLeftEngFireLit
 	local isRightEngFireLit
 	local isApuFireLit
-	
+
 	--using the modelViewer, you can see that the light comes on for values above 0.51-ish
 	--we will take that value and determine the true/false of its related boolean (bool)
 	if light_leftEngFireValue > 0.51 then
@@ -766,20 +763,20 @@ function ExportScript.TripleFireFeature(mainPanelDevice)
 	else
 		isLeftEngFireLit = 0
 	end
-	
+
 	--we will do the same for the right engine and apu
 	if light_leftEngFireValue > 0.51 then
 		isRightEngFireLit = 1
 	else
 		isRightEngFireLit = 0
 	end
-	
+
 	if light_apuFireValue > 0.51 then
 		isApuFireLit = 1
 	else
 		isApuFireLit = 0
 	end
-	
+
 	--now that we have the status of all of the lights, we will use them in another logic
 	local isFireHappening
 	--if any of these values are true, there is a fire
@@ -788,10 +785,10 @@ function ExportScript.TripleFireFeature(mainPanelDevice)
 	else
 		isFireHappening = 0
 	end
-	
+
 	--now we export the results in a unique export ID
 	ExportScript.Tools.SendData(3000, isFireHappening)
-	
+
 	--But, remember how we also wanted the text too?
 	--We will do that like this
 	--if a light is lit, then we populate the variable with a string
@@ -806,7 +803,7 @@ function ExportScript.TripleFireFeature(mainPanelDevice)
 	else
 		whatIsOnFire = ""  --it will be blank if nothing is on fire
 	end
-	
+
 	--use 3001 as a 'Title Text Change' in the streamdeck
 	ExportScript.Tools.SendData(3001, whatIsOnFire)
 end
