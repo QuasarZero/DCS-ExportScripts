@@ -355,7 +355,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[562]	= "%.1f",	-- PILOT Air Condition Auto/Manual/Off  ( DEVICE_ID: 26 DCS_ID: 3562)
 			[564]	= "%.3f",	-- PILOT Air Condition Cold/Hot  ( DEVICE_ID: 26 DCS_ID: 3564)	-- EDITED
 			[563]	= "%.1f",	-- PILOT Air Condition Max/Norm/Min  ( DEVICE_ID: 26 DCS_ID: 3563)
-			[565]	= "%.3f",	-- PILOT Air Conditioning Source  ( DEVICE_ID: 26 DCS_ID: 3565)	-- EDITED
+			[565]	= "%.2f",	-- PILOT Air Conditioning Source  ( DEVICE_ID: 26 DCS_ID: 3565)	-- EDITED
 		--  AMAD Panel
 			[314]	= "%.1f",	-- PILOT AMAD Fire Extinguisher Switch  ( DEVICE_ID: 15 DCS_ID: 3314)
 			[316]	= "%.1f",	-- PILOT AMAD Fire Switch  ( DEVICE_ID: 15 DCS_ID: 3316)
@@ -443,7 +443,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[527]	= "%.1f",	-- PILOT Fuel Control: Wing Tanks  ( DEVICE_ID: 16 DCS_ID: 3527)
 			[530]	= "%.1f",	-- PILOT Fuel Dump  ( DEVICE_ID: 16 DCS_ID: 3530)
 		--  Fuel Monitor Panel
-			[385]	= "%.1f",	-- PILOT Fuel Bingo Selection  ( DEVICE_ID: 17 DCS_ID: 3385)
+			[385]	= "%.3f",	-- PILOT Fuel Bingo Selection  ( DEVICE_ID: 17 DCS_ID: 3385)
 			[381]	= "%.1f",	-- PILOT Fuel Totalizer Selector  ( DEVICE_ID: 17 DCS_ID: 3381)
 		--  Generators
 			[589]	= "%.1f",	-- PILOT Emergency Generator  ( DEVICE_ID: 6 DCS_ID: 3589)
@@ -484,7 +484,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[574]	= "%.1f",	-- PILOT Storm FLood Lights  ( DEVICE_ID: 23 DCS_ID: 3574)
 			[573]	= "%.1f",	-- PILOT Warning/Caution Lights  ( DEVICE_ID: 23 DCS_ID: 3573)
 			[573]	= "%.1f",	-- PILOT Warning/Caution Lights Reset  ( DEVICE_ID: 23 DCS_ID: 3473)
-			[569]	= "%.1f",	-- PILOT Warning/Caution Lights Test  ( DEVICE_ID: 23 DCS_ID: 3569)
+			[569]	= "%1d",	-- PILOT Warning/Caution Lights Test  ( DEVICE_ID: 23 DCS_ID: 3569)
 		--  Landing Gear Panel
 			[337]	= "%.1f",	-- PILOT Emergency Landing Gear Handle PUSH/PULL  ( DEVICE_ID: 21 DCS_ID: 3337)
 			[431]	= "%.1f",	-- PILOT Emergency Landing Gear Handle ROTATE  ( DEVICE_ID: 21 DCS_ID: 3431)
@@ -947,7 +947,7 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)	-- Po
 		ExportScript.Tools.SendData(6009,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"VVI"))
 
 		ExportScript.Tools.SendData(6010,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"NAV"))	-- Combined Nav Block
-		ExportScript.Tools.SendData(6011,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"UPLEFT"))	
+		ExportScript.Tools.SendData(6011,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"UPLEFT"))
 		ExportScript.Tools.SendData(6012,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"LOLEFT"))
 		ExportScript.Tools.SendData(6013,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"UPRIGHT"))
 		ExportScript.Tools.SendData(6014,HUD_display(ExportScript.Tools.getListIndicatorValue(1),"LORIGHT"))
@@ -964,7 +964,7 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)	-- Po
 	-- SpeedBrake
 		ExportScript.Tools.SendData(6579,Mech_Data("SPDBRK_Value"))
 
-	end	
+	end
 --------------------------------------------------------------------------------------------------------------
 -----------------------
 -- GENERAL FUNCTIONS --
@@ -987,7 +987,7 @@ function ExportScript.ListIndicationLogDump(mainPanelDevice) -- list_indication 
         ExportScript.Tools.WriteToLog(ltmp2..': '..ExportScript.Tools.dump(ltmp1))
     end
 	end
-function Linearize(current_value, raw_tab, final_tab)	-- Converts Guage value to readable format 
+function Linearize(current_value, raw_tab, final_tab)	-- Converts Guage value to readable format
 	if current_value <= 0 then
 		return 0
 	end
@@ -1113,7 +1113,7 @@ function FORMAT_SCRATCH(Input)
 		return string.sub(Input,1,4).."\n"..string.sub(Input,5,8).."\n"..string.sub(Input, 9,Len)
 	end
 	end
-function PILOT_UFC(UFC_PILOT)	-- PILOT UFC export for Norsk-L
+function PILOT_UFC(UFC_PILOT)
 	if UFC_PILOT == nil then
 		ExportScript.Tools.SendData(82001,"NO\nDATA")
 	else
@@ -1127,15 +1127,15 @@ function PILOT_UFC(UFC_PILOT)	-- PILOT UFC export for Norsk-L
 		ExportScript.Tools.SendData(82006,FORMAT_UFCRAD(nilToEmpty(UFC_PILOT.UFC_SC_06)))	-- Radio Channel
 
 	-- CENTRE DESCENDING FROM THE TOP
-		ExportScript.Tools.SendData(82011,nilToEmpty(UFC_PILOT.UFC_CC_01:gsub(":",".")))	
-		ExportScript.Tools.SendData(82012,nilToEmpty(UFC_PILOT.UFC_CC_02:gsub(":",".")))	
-		ExportScript.Tools.SendData(82013,nilToEmpty(UFC_PILOT.UFC_CC_03:gsub(":",".")))	
+		ExportScript.Tools.SendData(82011,nilToEmpty(UFC_PILOT.UFC_CC_01:gsub(":",".")))
+		ExportScript.Tools.SendData(82012,nilToEmpty(UFC_PILOT.UFC_CC_02:gsub(":",".")))
+		ExportScript.Tools.SendData(82013,nilToEmpty(UFC_PILOT.UFC_CC_03:gsub(":",".")))
 		ExportScript.Tools.SendData(82014,FORMAT_SCRATCH(nilToEmpty(UFC_PILOT.UFC_CC_04)))	-- SCRATCHPAD
-		
+
 	-- RIGHT SIDE SIDE DESCENDING FROM THE TOP
-		ExportScript.Tools.SendData(82021,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_12)))	
-		ExportScript.Tools.SendData(82022,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_11)))	
-		ExportScript.Tools.SendData(82023,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_10)))	
+		ExportScript.Tools.SendData(82021,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_12)))
+		ExportScript.Tools.SendData(82022,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_11)))
+		ExportScript.Tools.SendData(82023,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_10)))
 		ExportScript.Tools.SendData(82024,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_09)))
 		-- RADIO
 		ExportScript.Tools.SendData(82025,FORMAT_UFCRAD(nilToEmpty(UFC_PILOT.UFC_SC_08)))	-- Radio Freq
@@ -1156,22 +1156,22 @@ function PILOT_UFCa(UFC_PILOT)	-- PILOT UFC export for Norsk-L
 		ExportScript.Tools.SendData(82006,FORMAT_UFCRAD(nilToEmpty(UFC_PILOT.UFC_SC_06)))	-- Radio Channel
 
 	-- RIGHT SIDE SIDE DESCENDING FROM THE TOP
-		ExportScript.Tools.SendData(82012,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_12)))	
-		ExportScript.Tools.SendData(82011,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_11)))	
-		ExportScript.Tools.SendData(82010,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_10)))	
+		ExportScript.Tools.SendData(82012,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_12)))
+		ExportScript.Tools.SendData(82011,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_11)))
+		ExportScript.Tools.SendData(82010,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_10)))
 		ExportScript.Tools.SendData(82009,FORMAT_UFC(nilToEmpty(UFC_PILOT.UFC_SC_09)))
 		-- RADIO
 		ExportScript.Tools.SendData(82008,FORMAT_UFCRAD(nilToEmpty(UFC_PILOT.UFC_SC_08)))	-- Radio Freq
 		ExportScript.Tools.SendData(82007,FORMAT_UFCRAD(nilToEmpty(UFC_PILOT.UFC_SC_07)))	-- Radio Channel
 
 	--CENTRE DESCENDING FROM THE TOP
-		ExportScript.Tools.SendData(82013,nilToEmpty(UFC_PILOT.UFC_CC_01:gsub(":",".")))	
-		ExportScript.Tools.SendData(82014,nilToEmpty(UFC_PILOT.UFC_CC_02:gsub(":",".")))	
-		ExportScript.Tools.SendData(82015,nilToEmpty(UFC_PILOT.UFC_CC_03:gsub(":",".")))	
+		ExportScript.Tools.SendData(82013,nilToEmpty(UFC_PILOT.UFC_CC_01:gsub(":",".")))
+		ExportScript.Tools.SendData(82014,nilToEmpty(UFC_PILOT.UFC_CC_02:gsub(":",".")))
+		ExportScript.Tools.SendData(82015,nilToEmpty(UFC_PILOT.UFC_CC_03:gsub(":",".")))
 		ExportScript.Tools.SendData(82016,FORMAT_SCRATCH(nilToEmpty(UFC_PILOT.UFC_CC_04)))	-- SCRATCHPAD
 	end
 	end
-function WSO_UFC(UFC_WSO)	-- WSO UFC export for Norsk-L
+function WSO_UFC(UFC_WSO)
 	if UFC_WSO == nil then
 		ExportScript.Tools.SendData(82000,"NO\nDATA\nWSO")
 	else
