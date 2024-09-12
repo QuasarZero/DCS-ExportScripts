@@ -206,7 +206,7 @@ ExportScript.ConfigEveryFrameArguments = 	-- arguments for export every frame (u
 			[378]	= "%.2f",	-- PILOT Right Fuel Counter 100
 			[377]	= "%.2f",	-- PILOT Right Fuel Counter 1K
 		--  Generators Lights
-			[596]	= "%.2f",	-- PILOT Starter Ready Light (green)
+			[596]	= "%1d",	-- PILOT Starter Ready Light (green)
 		--  HUD Control Panel Lights
 			[326]	= "%.2f",	-- PILOT HUD Master Mode AA Light (white)
 			[327]	= "%.2f",	-- PILOT HUD Master Mode AG Light (white)
@@ -415,12 +415,12 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[558]	= "%.1f",	-- PILOT Anti-Fog  ( DEVICE_ID: 26 DCS_ID: 3558)
 			[556]	= "%.1f",	-- PILOT Oxygen TEST  ( DEVICE_ID: 26 DCS_ID: 3556)
 		--  Engine Panel
-			[590]	= "%.1f",	-- PILOT Left Engine Control Switch  ( DEVICE_ID: 15 DCS_ID: 3590)
-			[593]	= "%.1f",	-- PILOT Left Engine Master Switch  ( DEVICE_ID: 15 DCS_ID: 3593)
-			[592]	= "%.1f",	-- PILOT Left Engine Master Switch Cover  ( DEVICE_ID: 15 DCS_ID: 3592)
-			[591]	= "%.1f",	-- PILOT Right Engine Control Switch  ( DEVICE_ID: 15 DCS_ID: 3591)
-			[598]	= "%.1f",	-- PILOT Right Engine Master Switch  ( DEVICE_ID: 15 DCS_ID: 3598)
-			[597]	= "%.1f",	-- PILOT Right Engine Master Switch Cover  ( DEVICE_ID: 15 DCS_ID: 3597)
+			[590]	= "%1d",	-- PILOT Left Engine Control Switch  ( DEVICE_ID: 15 DCS_ID: 3590)
+			[593]	= "%1d",	-- PILOT Left Engine Master Switch  ( DEVICE_ID: 15 DCS_ID: 3593)
+			[592]	= "%1d",	-- PILOT Left Engine Master Switch Cover  ( DEVICE_ID: 15 DCS_ID: 3592)
+			[591]	= "%1d",	-- PILOT Right Engine Control Switch  ( DEVICE_ID: 15 DCS_ID: 3591)
+			[598]	= "%1d",	-- PILOT Right Engine Master Switch  ( DEVICE_ID: 15 DCS_ID: 3598)
+			[597]	= "%1d",	-- PILOT Right Engine Master Switch Cover  ( DEVICE_ID: 15 DCS_ID: 3597)
 		--  External Lights Panel
 			[466]	= "%.1f",	-- PILOT Anti Collison Light Switch  ( DEVICE_ID: 22 DCS_ID: 3466)
 			[465]	= "%.3f",	-- PILOT Formation Lights Knob  ( DEVICE_ID: 22 DCS_ID: 3465)	-- EDITED
@@ -441,23 +441,23 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[528]	= "%.1f",	-- PILOT Fuel Control: Centerline Tanks  ( DEVICE_ID: 16 DCS_ID: 3528)
 			[529]	= "%.1f",	-- PILOT Fuel Control: Conformal Tanks  ( DEVICE_ID: 16 DCS_ID: 3529)
 			[527]	= "%.1f",	-- PILOT Fuel Control: Wing Tanks  ( DEVICE_ID: 16 DCS_ID: 3527)
-			[530]	= "%.1f",	-- PILOT Fuel Dump  ( DEVICE_ID: 16 DCS_ID: 3530)
+			[530]	= "%1d",	-- PILOT Fuel Dump  ( DEVICE_ID: 16 DCS_ID: 3530)
 		--  Fuel Monitor Panel
 			[385]	= "%.3f",	-- PILOT Fuel Bingo Selection  ( DEVICE_ID: 17 DCS_ID: 3385)
 			[381]	= "%.1f",	-- PILOT Fuel Totalizer Selector  ( DEVICE_ID: 17 DCS_ID: 3381)
 		--  Generators
 			[589]	= "%.1f",	-- PILOT Emergency Generator  ( DEVICE_ID: 6 DCS_ID: 3589)
-			[594]	= "%.1f",	-- PILOT External Power Switch  ( DEVICE_ID: 6 DCS_ID: 3594)
-			[595]	= "%.1f",	-- PILOT Jet Starter  ( DEVICE_ID: 6 DCS_ID: 3595)
-			[587]	= "%.1f",	-- PILOT Left Generator  ( DEVICE_ID: 6 DCS_ID: 3587)
-			[588]	= "%.1f",	-- PILOT Right Generator  ( DEVICE_ID: 6 DCS_ID: 3588)
+			[594]	= "%1d",	-- PILOT External Power Switch  ( DEVICE_ID: 6 DCS_ID: 3594)
+			[595]	= "%1d",	-- PILOT Jet Starter  ( DEVICE_ID: 6 DCS_ID: 3595)
+			[587]	= "%1d",	-- PILOT Left Generator  ( DEVICE_ID: 6 DCS_ID: 3587)
+			[588]	= "%1d",	-- PILOT Right Generator  ( DEVICE_ID: 6 DCS_ID: 3588)
 		--  Ground Power
-			[483]	= "%.1f",	-- PILOT Ground Power 1 Switch  ( DEVICE_ID: 6 DCS_ID: 3483)
-			[478]	= "%.1f",	-- PILOT Ground Power 2 Switch  ( DEVICE_ID: 6 DCS_ID: 3478)
-			[479]	= "%.1f",	-- PILOT Ground Power 3 Switch  ( DEVICE_ID: 6 DCS_ID: 3479)
-			[480]	= "%.1f",	-- PILOT Ground Power 4 Switch  ( DEVICE_ID: 6 DCS_ID: 3480)
-			[484]	= "%.1f",	-- PILOT MPDP/A1U Switch  ( DEVICE_ID: 6 DCS_ID: 3484)
-			[481]	= "%.1f",	-- PILOT PACS Switch  ( DEVICE_ID: 6 DCS_ID: 3481)
+			[483]	= "%1d",	-- PILOT Ground Power 1 Switch  ( DEVICE_ID: 6 DCS_ID: 3483)
+			[478]	= "%1d",	-- PILOT Ground Power 2 Switch  ( DEVICE_ID: 6 DCS_ID: 3478)
+			[479]	= "%1d",	-- PILOT Ground Power 3 Switch  ( DEVICE_ID: 6 DCS_ID: 3479)
+			[480]	= "%1d",	-- PILOT Ground Power 4 Switch  ( DEVICE_ID: 6 DCS_ID: 3480)
+			[484]	= "%1d",	-- PILOT MPDP/A1U Switch  ( DEVICE_ID: 6 DCS_ID: 3484)
+			[481]	= "%1d",	-- PILOT PACS Switch  ( DEVICE_ID: 6 DCS_ID: 3481)
 		--  HUD Control Panel
 			[126]	= "%.1f",	-- PILOT HUD A/A Master Mode Selector  ( DEVICE_ID: 32 DCS_ID: 3126)
 			[127]	= "%.1f",	-- PILOT HUD A/G Master Mode Selector  ( DEVICE_ID: 32 DCS_ID: 3127)
@@ -470,13 +470,13 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[121]	= "%.1f",	-- PILOT HUD Symbology Reject Mode  ( DEVICE_ID: 55 DCS_ID: 3121)
 			[124]	= "%.1f",	-- PILOT HUD Video Brightness Control  ( DEVICE_ID: 55 DCS_ID: 3124)
 		--  IFF
-			[517]	= "%.1f",	-- PILOT IFF Master Switch  ( DEVICE_ID: 17 DCS_ID: 3517)
-			[515]	= "%.1f",	-- PILOT IFF Mode Switch  ( DEVICE_ID: 17 DCS_ID: 3515)
+			[517]	= "%1d",	-- PILOT IFF Master Switch  ( DEVICE_ID: 17 DCS_ID: 3517)
+			[515]	= "%1d",	-- PILOT IFF Mode Switch  ( DEVICE_ID: 17 DCS_ID: 3515)
 			[516]	= "%.1f",	-- PILOT IFF Reply Switch  ( DEVICE_ID: 17 DCS_ID: 3516)
 		--  Internal Lights Panel
 			[186]	= "%.1f",	-- PILOT Chart Spot Lamp  ( DEVICE_ID: 23 DCS_ID: 3575)
 			[572]	= "%.1f",	-- PILOT Charts Spot Light  ( DEVICE_ID: 23 DCS_ID: 3572)
-			[570]	= "%.1f",	-- PILOT Compass Lights  ( DEVICE_ID: 23 DCS_ID: 3570)
+			[570]	= "%1d",	-- PILOT Compass Lights  ( DEVICE_ID: 23 DCS_ID: 3570)
 			[566]	= "%.1f",	-- PILOT Console Lights  ( DEVICE_ID: 23 DCS_ID: 3566)
 			[571]	= "%.1f",	-- PILOT Day/Night Mode Selector  ( DEVICE_ID: 23 DCS_ID: 3571)
 			[568]	= "%.1f",	-- PILOT Gauges/UFC Backlights  ( DEVICE_ID: 23 DCS_ID: 3568)
@@ -531,7 +531,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[205]	= "%.1f",	-- PILOT Left MPD Push Button 20  ( DEVICE_ID: 34 DCS_ID: 3080)
 		--  MICS
 			[509]	= "%.1f",	-- PILOT MIC Switch  ( DEVICE_ID: 13 DCS_ID: 3509)
-			[508]	= "%.1f",	-- PILOT MICS Crypto Switch  ( DEVICE_ID: 13 DCS_ID: 3508)
+			[508]	= "%1d",	-- PILOT MICS Crypto Switch  ( DEVICE_ID: 13 DCS_ID: 3508)
 			[510]	= "%.1f",	-- PILOT MICS VW/Tone Silence Switch  ( DEVICE_ID: 29 DCS_ID: 3510)
 		--  Misc
 			[537]	= "%.1f",	-- PILOT Anti Skid Switch  ( DEVICE_ID: 21 DCS_ID: 3537)
@@ -559,10 +559,10 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[551]	= "%1d",	-- PILOT Oxygen Emergency/Normal/Test Switch  ( DEVICE_ID: 26 DCS_ID: 3551)
 			[553]	= "%.1f",	-- PILOT Oxygen Supply/Mode Control Switch  ( DEVICE_ID: 26 DCS_ID: 3553)
 		--  Radio
-			[514]	= "%.1f",	-- PILOT Radio Cypher Text Switch  ( DEVICE_ID: 17 DCS_ID: 3514)
-			[513]	= "%.1f",	-- PILOT Radio Tone Switch  ( DEVICE_ID: 17 DCS_ID: 3513)
-			[511]	= "%.1f",	-- PILOT Radio UHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3511)
-			[512]	= "%.1f",	-- PILOT Radio VHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3512)
+			[514]	= "%1d",	-- PILOT Radio Cypher Text Switch  ( DEVICE_ID: 17 DCS_ID: 3514)
+			[513]	= "%1d",	-- PILOT Radio Tone Switch  ( DEVICE_ID: 17 DCS_ID: 3513)
+			[511]	= "%1d",	-- PILOT Radio UHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3511)
+			[512]	= "%1d",	-- PILOT Radio VHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3512
 		--  Right MPD
 			[245]	= "%.1f",	-- PILOT Right MPD Brightness Control  ( DEVICE_ID: 36 DCS_ID: 3082)
 			[246]	= "%.1f",	-- PILOT Right MPD Contrast Control  ( DEVICE_ID: 36 DCS_ID: 3083)
@@ -644,12 +644,12 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[680]	= "%.1f",	-- PILOT Left UHF Preset Channel Switch  ( DEVICE_ID: 56 DCS_ID: 3055)
 			[681]	= "%.1f",	-- PILOT Right UHF Preset Channel Switch  ( DEVICE_ID: 56 DCS_ID: 3056)
 		--  Volume
-			[502]	= "%.1f",	-- PILOT Caution Volume  ( DEVICE_ID: 59 DCS_ID: 3502)
-			[504]	= "%.1f",	-- PILOT ICS Volume  ( DEVICE_ID: 13 DCS_ID: 3504)
-			[506]	= "%.1f",	-- PILOT ILS Volume  ( DEVICE_ID: 11 DCS_ID: 3506)
-			[503]	= "%.1f",	-- PILOT Launch Volume  ( DEVICE_ID: 59 DCS_ID: 3503)
-			[507]	= "%.1f",	-- PILOT TACAN Volume  ( DEVICE_ID: 10 DCS_ID: 3507)
+			[502]	= "%.1f",	-- PILOT Caution Volume  ( DEVICE_ID: 59 DCS_ID: 3501)
+			[504]	= "%.1f",	-- PILOT ICS Volume  ( DEVICE_ID: 13 DCS_ID: 3503)
+			[506]	= "%.1f",	-- PILOT ILS Volume  ( DEVICE_ID: 11 DCS_ID: 3505)
+			[503]	= "%.1f",	-- PILOT Launch Volume  ( DEVICE_ID: 59 DCS_ID: 3502)
 			[505]	= "%.1f",	-- PILOT WPN Volume  ( DEVICE_ID: 44 DCS_ID: 3505)
+			[507]	= "%.1f",	-- PILOT TACAN Volume  ( DEVICE_ID: 10 DCS_ID: 3506)
 	-------------------------------------------------------------------
 	-- WSO COCKPIT
 	-------------------------------------------------------------------
