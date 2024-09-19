@@ -154,13 +154,13 @@ ExportScript.ConfigEveryFrameArguments =
 	[389] = "%.4f",	--QTY 1. Drum 
 	[390] = "%.4f",	--QTY 2.
 	--LOWER AMARMENT PANEL
-	[406] = "%.4f",	--SET FLAG 1
-	[408] = "%.4f",	--SET FLAG 2
-	[410] = "%.4f",	--SET FLAG 3
-	[412] = "%.4f",	--SET FLAG 4
-	[414] = "%.4f",	--SET FLAG 5
-	[416] = "%.4f",	--SET FLAG 6
-	[418] = "%.4f",	--SET FLAG 7
+	[406] = "%1d",	--SET FLAG 1
+	[408] = "%1d",	--SET FLAG 2
+	[410] = "%1d",	--SET FLAG 3
+	[412] = "%1d",	--SET FLAG 4
+	[414] = "%1d",	--SET FLAG 5
+	[416] = "%1d",	--SET FLAG 6
+	[418] = "%1d",	--SET FLAG 7
 	--GEAR PANEL DISPLAY --STATUS LIGHTS--
 	[462] = "%.f",	--NOSE GEAR (YELLOW)
 	[463] = "%.f",	--NOSE GEAR (GREEN)
@@ -285,9 +285,9 @@ ExportScript.ConfigArguments =
 	[323] = "%1d",	--Radar Beacon Function Selector
 	[297] = "%1d",	--I/P Button
 	[309] = "%1d",	--Save Data Button
-	[295] = "%1d",	--Display Brightness Control
-	[298] = "%.4f",	--Comm 1 Volume Control
-	[299] = "%.4f",	--Comm 2 Volume Control
+	[295] = "%.2f",	--Display Brightness Control
+	[298] = "%.2f",	--Comm 1 Volume Control
+	[299] = "%.2f",	--Comm 2 Volume Control
 	[300] = "%.4f",	--Comm 1 Channel Selector
 	[301] = "%.4f",	--Comm 2 Channel Selector
 	[178] = "%.4f",	--Comm 1 Channel Show Button
@@ -505,10 +505,10 @@ ExportScript.ConfigArguments =
 	[633] = "%1d",	--IFF Crypto Mode Switch
 -- Interior Lights Panel
 	[634] = "%1d",	--Compass Light/Test Lights
-	[635] = "%.4f",	--Instruments Lights
-	[636] = "%.4f",	--Console Lights
-	[637] = "%.4f",	--Flood Lights
-	[638] = "%.4f",	--Annunciator Lights
+	[635] = "%.2f",	--Instruments Lights
+	[636] = "%.2f",	--Console Lights
+	[637] = "%.2f",	--Flood Lights
+	[638] = "%.2f",	--Annunciator Lights
 }
 
 -----------------------------
@@ -735,11 +735,11 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	elseif digits[1] == "2" then 
 		ExportScript.Tools.SendData(2018, "AUT")
 	elseif digits[1] == "4" then 
-		ExportScript.Tools.SendData(2018, "CP ")
+		ExportScript.Tools.SendData(2018, "CIP")
 	elseif digits[1] == "6" then 
 		ExportScript.Tools.SendData(2018, "DSL")
 	elseif digits[1] == "8" then 
-		ExportScript.Tools.SendData(2018, "DR ")
+		ExportScript.Tools.SendData(2018, "DIR ")
 	elseif digits[1] == "10" then 
 		ExportScript.Tools.SendData(2018, "AGM") 
 	end
