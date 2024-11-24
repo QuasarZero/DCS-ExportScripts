@@ -656,6 +656,19 @@ function ExportScript.AF.FC_Russian_BarometricAltimeter_late()
 	-- BasicAtmospherePressure {947, 1080} hPa
 	-- AltBar_kilometer {0, 99} km
 
+    -- Export atmosphere pressure indicator
+    -- Because the damn ED has hidden the inHg value in the altimeter!
+    local AtmospherePressureFor_hPa   = ExportScript.Tools.round(lBasicAtmospherePressure, 2)
+    local AtmospherePressureFor_mmHg  = ExportScript.Tools.round(lBasicAtmospherePressure * 0.7501, 2)
+    -- mmHg
+    ExportScript.Tools.SendData(1012, AtmospherePressureFor_hPa)
+    ExportScript.Tools.SendData(1022, AtmospherePressureFor_hPa..'\nhPa')
+    -- kPa
+    ExportScript.Tools.SendData(1013, AtmospherePressureFor_mmHg)
+    ExportScript.Tools.SendData(1023, AtmospherePressureFor_mmHg..'\nmmHg')
+    -- Combine mmHg, kPa
+    ExportScript.Tools.SendData(1025, AtmospherePressureFor_hPa..' mbar\n'..AtmospherePressureFor_mmHg..' mmHg')
+
     ExportScript.Tools.SendData(30, string.format("%.4f", lAltBar_kilometer_needle))
     ExportScript.Tools.SendData(31, string.format("%.4f", lAltBar_meter_needle))
     ExportScript.Tools.SendData(32, string.format("%04d", ExportScript.Tools.round(lBasicAtmospherePressure, 0, "floor")))
