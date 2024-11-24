@@ -329,7 +329,7 @@ ExportScript.ConfigArguments =
 	[221] = "%1d",	--MPCD Left Display Symbology
 	[222] = "%1d",	--MPCD Left Display Gain
 	[223] = "%1d",	--MPCD Left Display Contrast
-	[194] = "%.4f",	--MPCD Left Off/Brightness Control
+	[194] = "%.2f",	--MPCD Left Off/Brightness Control
 	-- MPCD Right
 	[224] = "%1d",	--MPCD Right Button 1
 	[225] = "%1d",	--MPCD Right Button 2
@@ -355,7 +355,7 @@ ExportScript.ConfigArguments =
 	[245] = "%1d",	--MPCD Right Display Symbology
 	[246] = "%1d",	--MPCD Right Display Gain
 	[247] = "%1d",	--MPCD Right Display Contrast
-	[195] = "%.4f",	--MPCD Right Off/Brightness Control
+	[195] = "%.2f",	--MPCD Right Off/Brightness Control
 	-- Armament Control Panel ACP
 	[395] = "%.1f",	--Manual Release Control Knob
 	[396] = "%1d",	--Armament Mode Control
@@ -480,7 +480,7 @@ ExportScript.ConfigArguments =
 	[612] = "%.1f",	--Generator Switch
 	[613] = "%.1f",	--Battery Switch
 -- V/UHF Radio Panel
-	[614] = "%.4f",	--V/UHF RSC Volume Knob
+	[614] = "%.2f",	--V/UHF RSC Volume Knob
 	[615] = "%.3f",	--V/UHF RSC Chan/Freq Knob
 	[616] = "%.1f",	--V/UHF RSC Operational Mode Switch
 	[617] = "%1d",	--V/UHF RSC Ancillary Mode Pointer
@@ -497,8 +497,8 @@ ExportScript.ConfigArguments =
 	[627] = "%1d",	--KY-58 Codes Clear Switch
 	[628] = "%1d",	--KY-58 Remote Codes Load Switch
 -- ICS
-	[629] = "%.4f",	--ICS Aux Volume Knob
-	[630] = "%.4f",	--ICS Ground Volume Knob
+	[629] = "%.2f",	--ICS Aux Volume Knob
+	[630] = "%.2f",	--ICS Ground Volume Knob
 	[631] = "%.1f",	--ICS Mic Operational Mode Switch
 -- IFF
 	[632] = "%1d",	--IFF Operational Mode Switch
