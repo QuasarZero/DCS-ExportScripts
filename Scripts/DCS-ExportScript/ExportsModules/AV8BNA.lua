@@ -254,8 +254,8 @@ ExportScript.ConfigArguments =
 	[288] = "%.4f",	--HUD
 	[289] = "%.4f",	--HUD Off/Brightness Control
 	[290] = "%.1f",	--HUD Display Mode Switch
-	[291] = "%.4f",	--HUD Video Brightness Control
-	[292] = "%.4f",	--HUD Video Contrast Control
+	[291] = "%.2f",	--HUD Video Brightness Control
+	[292] = "%.2f",	--HUD Video Contrast Control
 	[293] = "%1d",	--HUD Altitude Selector Switch
 	-- UFC Panel
 	[302] = "%1d",	--UFC Button 1
