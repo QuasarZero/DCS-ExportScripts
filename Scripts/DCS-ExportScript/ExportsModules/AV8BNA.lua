@@ -248,7 +248,7 @@ ExportScript.ConfigArguments =
 	[284] = "%.1f",	--VSTOL Master Mode Selector
 	[280] = "%.1f",	--AG Master Mode Selector
 	-- Engine Display Panel
-	[272] = "%.4f",	--EDP Brightness Control
+	[272] = "%.2f",	--EDP Brightness Control
 	[655] = "%1d",	--EDP BIT Button
 	-- HUD Control Panel
 	[288] = "%.4f",	--HUD
