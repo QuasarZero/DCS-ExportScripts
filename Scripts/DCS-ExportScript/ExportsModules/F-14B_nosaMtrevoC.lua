@@ -205,7 +205,7 @@ ExportScript.ConfigEveryFrameArguments =
 
 		-- Inlet Ramps/Throttle Control Panel
 		[2104]  =  "%.4f",   -- THROTTLE MODE (AUTO|BOOST|MAN)
-		[2103]  =  "%.4f",   -- THROTTLE TEMP (HOT|NORM|COLD)
+		[2103]  =  "%1d",   -- THROTTLE TEMP (HOT|NORM|COLD)
 		[2100]  =  "%.4f",   -- L INLET RAMP (STOW|AUTO)
 		[2101]  =  "%.4f",   -- R INLET RAMP (STOW|AUTO)
 		[2102]  =  "%.4f",   -- ENG CRANK (L|R)
@@ -245,7 +245,7 @@ ExportScript.ConfigEveryFrameArguments =
 		[16009] =  "%.4f",   -- LOAD button
 		[2034]  =  "%.2f",   -- Function selector knob (ADF|BOTH|MAIN|OFF)
 		[2032]  =  "%.4f",   -- CHAN SEL knob selects preset channels
-		[2033]  =  "%.4f",   -- Mode selector knob (GUARD|MANUAL|PRESET)
+		[2033]  =  "%.1f",   -- Mode selector knob (GUARD|MANUAL|PRESET)
 		[16010] =  "%.4f",   -- TONE button transmits tone on freq.
 
 		-- Throttle Buttons
@@ -355,12 +355,12 @@ ExportScript.ConfigEveryFrameArguments =
 
 -- 6b
 		-- Vertical Display Indicator (VDI)
-		[1037]  =  "%.4f",   -- HUD Brightness Control
-		[1036]  =  "%.4f",   -- VDI Brightness Control
+		[1037]  =  "%.2f",   -- HUD Brightness Control
+		[1036]  =  "%.2f",   -- VDI Brightness Control
 		[1038]  =  "%.2f",   -- VDI Contrast Control
-		[1033]  =  "%.4f",   -- FILTER Handle when pulled inserts filter for night ops
-		[1034]  =  "%.4f",   -- HUD Trim control for pitch lines
-		[1035]  =  "%.4f",   -- VDI Trim adjustment of pitch lines on VDI
+		[1033]  =  "%.2f",   -- FILTER Handle when pulled inserts filter for night ops
+		[1034]  =  "%.2f",   -- HUD Trim control for pitch lines
+		[1035]  =  "%.2f",   -- VDI Trim adjustment of pitch lines on VDI
 
 		-- VDI Caution Lights (also check 2222 id range if below not working)
 		[9360]  =  "%.4f",   -- ADJ A/C Advisory light indicating other aircraft close to own traffic pattern.
@@ -547,8 +547,8 @@ ExportScript.ConfigEveryFrameArguments =
 		[15024] =  "%.1f",   -- AUX FIRE EXT - low press. in Aux. fire ext.
 
 		-- Master Generator Control Panel
-		[937]   =  "%.4f",   -- LEFT MASTER GEN switch (NORM|OFF/RESET|TEST)
-		[936]   =  "%.4f",   -- RIGHT MASTER GEN switch (NORM|OFF/RESET|TEST)
+		[937]   =  "%1d",   -- LEFT MASTER GEN switch (NORM|OFF/RESET|TEST)
+		[936]   =  "%1d",   -- RIGHT MASTER GEN switch (NORM|OFF/RESET|TEST)
 		[927]   =  "%.4f",   -- EMERG switch (EMERG|NORM|OFF/RESET) COVER
 		[926]   =  "%.4f",   -- EMERG switch (EMERG|NORM|OFF/RESET)
 
@@ -1049,25 +1049,34 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	0.5000 = MANUAL
 	1.0000 = GUARD
 	]]
-	
-	local UHF_ARC159_infoBase = ExportScript.Tools.split(list_indication(8), "%c")--this contains the formated table of the base radio
+
+	-- 10 159 base
+	-- 11 159 pilot
+	-- 12 159 rio
+	-- 12 159 list
+	-- 13 182 base
+	-- 14 182 base
+
+	local UHF_ARC159_infoBase = ExportScript.Tools.split(list_indication(9), "%c")--this contains the formated table of the base radio
 	local UHF_ARC159_readoutBase = UHF_ARC159_infoBase[10] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
+	local UHF_ARC159_inRead = string.format("%1d", mainPanelDevice:get_argument_value(8115))
+
 	
-	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" then
+	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
 		ExportScript.Tools.SendData(60000, string.format("ARC-159\n" .. UHF_ARC159_readoutBase:sub(1,3) .. "." .. UHF_ARC159_readoutBase:sub(4,6)))
 		ExportScript.Tools.SendData(60001, string.format(UHF_ARC159_readoutBase:sub(1,3) .. "." .. UHF_ARC159_readoutBase:sub(4,6)))
 	elseif UHF_ARC159_FreqMode == "0.0" then
-		ExportScript.Tools.SendData(60000, string.format("ARC-159\n" .. "CH " .. UHF_ARC159_readoutBase:sub(4,6)))
-		ExportScript.Tools.SendData(60001, string.format("CH " .. UHF_ARC159_readoutBase:sub(4,6)))
+        ExportScript.Tools.SendData(60000, string.format("ARC-159\n" .. "CH " .. UHF_ARC159_readoutBase:sub(4,6)))
+        ExportScript.Tools.SendData(60001, string.format("CH " .. UHF_ARC159_readoutBase:sub(4,6)))
 	end
 
 
-	local UHF_ARC159_infoPilot = ExportScript.Tools.split(list_indication(9), "%c")--this contains the formated table of the Pilot radio
+	local UHF_ARC159_infoPilot = ExportScript.Tools.split(list_indication(10), "%c")--this contains the formated table of the Pilot radio
 	local UHF_ARC159_readoutPilot = UHF_ARC159_infoPilot[16] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
 	
-	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" then
+	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
 		ExportScript.Tools.SendData(60002, string.format("ARC-159\n" .. UHF_ARC159_readoutPilot:sub(1,3) .. "." .. UHF_ARC159_readoutPilot:sub(4,6)))
 		ExportScript.Tools.SendData(60003, string.format(UHF_ARC159_readoutPilot:sub(1,3) .. "." .. UHF_ARC159_readoutPilot:sub(4,6)))
 	elseif UHF_ARC159_FreqMode == "0.0" then
@@ -1076,11 +1085,11 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	end
 	
 	
-	local UHF_ARC159_infoRio = ExportScript.Tools.split(list_indication(9), "%c")--this contains the formated table of the Rio radio
+	local UHF_ARC159_infoRio = ExportScript.Tools.split(list_indication(11), "%c")--this contains the formated table of the Rio radio
 	local UHF_ARC159_readoutRio = UHF_ARC159_infoRio[16] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
 	
-	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" then
+	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
 		ExportScript.Tools.SendData(60004, string.format("ARC-159\n" .. UHF_ARC159_readoutRio:sub(1,3) .. "." .. UHF_ARC159_readoutRio:sub(4,6)))
 		ExportScript.Tools.SendData(60005, string.format(UHF_ARC159_readoutRio:sub(1,3) .. "." .. UHF_ARC159_readoutRio:sub(4,6)))
 	elseif UHF_ARC159_FreqMode == "0.0" then
@@ -1099,11 +1108,11 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	0.8 = V/UHF
 	1.0 = LOAD?
 	]]
-	
-	local VHF_ARC182_infoBase = ExportScript.Tools.split(list_indication(12), "%c")--this contains the formated table of the base radio
+
+	local VHF_ARC182_infoBase = ExportScript.Tools.split(list_indication(13), "%c")--this contains the formated table of the base radio
 	local VHF_ARC182_readoutBase = VHF_ARC182_infoBase[10] -- so far it has always been 10 in both channel and freq modes
 	local VHF_ARC182_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(353))
-	
+
 	if VHF_ARC182_FreqMode == "0.0" or VHF_ARC182_FreqMode == "0.2" then
 		ExportScript.Tools.SendData(60006, string.format("ARC-182\n" .. VHF_ARC182_readoutBase:sub(1,3) .. "." .. VHF_ARC182_readoutBase:sub(4,6)))
 		ExportScript.Tools.SendData(60007, string.format(VHF_ARC182_readoutBase:sub(1,3) .. "." .. VHF_ARC182_readoutBase:sub(4,6)))
@@ -1326,6 +1335,7 @@ end
 function ExportScript.gunCounter(mainPanelDevice) -- Gun Counter
 	local gunCounter = ExportScript.rotaryCounter(mainPanelDevice:get_argument_value(4060)) .. ExportScript.rotaryCounter(mainPanelDevice:get_argument_value(4061)) .. ExportScript.rotaryCounter(mainPanelDevice:get_argument_value(4062))
 	ExportScript.Tools.SendData(54060, "ROUNDS\n" .. gunCounter)
+	ExportScript.Tools.SendData(54061, gunCounter)
 
 
     local hLead    = ExportScript.Tools.round(mainPanelDevice:get_argument_value(2270) * 10, 0)
@@ -1336,7 +1346,9 @@ function ExportScript.gunCounter(mainPanelDevice) -- Gun Counter
     else sign = "+"
     end
 	local elevLead = sign .. math.abs(hLead % 10) .. math.abs(tLead  % 10) .. math.abs(oLead % 10)
-	ExportScript.Tools.SendData(54061, elevLead .. "\nMILS")
+	ExportScript.Tools.SendData(54062, elevLead .. "\nMILS")
+	ExportScript.Tools.SendData(54063, elevLead .. " MILS")
+	ExportScript.Tools.SendData(54064, elevLead)
 end
 
 
