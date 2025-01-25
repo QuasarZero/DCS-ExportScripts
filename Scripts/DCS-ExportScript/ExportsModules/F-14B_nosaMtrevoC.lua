@@ -1023,6 +1023,7 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	ExportScript.displayFuel(mainPanelDevice)			-- Set of 5 different fuel gauges and a nice multi-gauge (ID's 52117 / 56000 / 56004 / 56010 / 56020 / 56024) Cus. Func.
 	ExportScript.displayAccel(mainPanelDevice)			-- Accellerometer Gauge Custom Function
 	ExportScript.clockAndTimer(mainPanelDevice)			-- Clock and Timer in digital format on same gauge Custom Function
+	ExportScript.displayAltitude(mainPanelDevice)
 	-- end A9
 
 	-- A10 - Pilot Right Vertical Console
@@ -1470,4 +1471,31 @@ function ExportScript.displayFuel(mainPanelDevice) -- Fuel Gauges and output on 
 	ExportScript.Tools.SendData(56010, "FUEL\n" .. totalFuel .. "\nQTY")			-- Return Total Fuel Qty Formatted like F-14 Gauge
 	ExportScript.Tools.SendData(56020, "BINGO\n" .. bingoFuel)						-- Return Total Bingo Fuel Qty Formatted like F-14 Gauge
 	ExportScript.Tools.SendData(56024, "BINGO " .. bingoFuel .. "\nTOTAL " .. totalFuel .. "\n" .. aftAndL .. "  |  " .. fwdAndR .. "\n   L    |    R   \n" .. leftFuel .. "  |  " .. rightFuel)  -- Nice Multi Gauge
+end
+
+function ExportScript.displayAltitude(mainPanelDevice) -- Altitude A4 ----------------------------------------------
+
+	local AltPlt = string.sub(string.format("%.1f", mainPanelDevice:get_argument_value(112)), 3, 3) .. string.sub(string.format("%.1f", mainPanelDevice:get_argument_value(262)), 3, 3) .. string.sub(string.format("%.1f", mainPanelDevice:get_argument_value(300)), 3, 3) .. "00"
+
+	ExportScript.Tools.SendData(52262, AltPlt .. "\nFEET")	-- Return Altitude Formatted like F-14 Servopneumatic Altitude
+
+    local x = {0, 0.057, 0.1, 0.141, 0.212, 0.328, 0.427, 0.518, 0.588, 0.646, 0.731, 0.801, 0.867, 0.915, 1.000}
+    local y = {0, 80, 100, 120, 150, 200, 250, 300, 350, 400, 500, 600, 700, 800, 1000} -- 1000 KIAS is fake just to fill the range
+    ExportScript.Tools.SendData(52261, string.format("%d", ExportScript.Linearize(mainPanelDevice:get_argument_value(2129), x, y)) .. "\nKNOTS")
+end
+
+function ExportScript.Linearize(current_value, raw_tab, final_tab)
+  -- (c) scoobie
+  if current_value <= raw_tab[1] then
+    return final_tab[1]
+  end
+  for index, value in pairs(raw_tab) do
+    if current_value <= value then
+      local ft = final_tab[index]
+      local rt = raw_tab[index]
+      return (current_value - rt) * (ft - final_tab[index - 1]) / (rt - raw_tab[index - 1]) + ft
+    end
+  end
+  -- we shouldn't be here, so something went wrong - return arbitrary max. final value, maybe the user will notice the problem:
+  return final_tab[#final_tab]
 end
