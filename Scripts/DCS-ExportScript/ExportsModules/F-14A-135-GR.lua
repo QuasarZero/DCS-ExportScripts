@@ -224,13 +224,13 @@ ExportScript.ConfigEveryFrameArguments =
 		[8888]  =  "%.4f",   -- Dual rotary switch Outer Dial
 		[8889]  =  "%.4f",   -- Dual rotary switch Inner Dial
 		[0]  =  "%.4f",   -- TACAN channel 3 digit
-		[8050]  =  "%.4f",   -- Status Go
-		[8051]  =  "%.4f",   -- Status NO-GO
-		[2115]  =  "%.4f",   -- BIT button initiating TACAN BIT
-		[2043]  =  "%.4f",   -- NORMAL MODE switche (X|Y)
+		[8050]  =  "%1d",   -- Status Go
+		[8051]  =  "%1d",   -- Status NO-GO
+		[2115]  =  "%1d",   -- BIT button initiating TACAN BIT
+		[2043]  =  "%1d",   -- NORMAL MODE switche (X|Y)
 		[2036]  =  "%.1f",   -- VOL knob for TACAN audio to pilot
-		[2041]  =  "%.4f",   -- MODE konb (OFF|REC|T/R|A/A|BCN)
-		[2042]  =  "%.4f",   -- MODE (NORMAL|INVERSE)
+		[2041]  =  "%.2f",   -- MODE konb (OFF|REC|T/R|A/A|BCN)
+		[2042]  =  "%1d",   -- MODE (NORMAL|INVERSE)
 
 		-- UHF 1 (AN/ARC-159) Radio
 		[2031]  =  "%.1f",   -- VOL knob controls radio to pilot vol.
@@ -494,10 +494,10 @@ ExportScript.ConfigEveryFrameArguments =
 
 -- 11a
 		-- Spoiler Failure Override
-		[902]   =  "%.4f",   -- Inboard spoiler override (ORIDE|NORM) COVER
-		[903]   =  "%.4f",   -- Outboard spoiler override (ORIDE|NORM) COVER
-		[908]   =  "%.4f",   -- Inboard spoiler override (ORIDE|NORM)
-		[907]   =  "%.4f",   -- Outboard spoiler override (ORIDE|NORM)
+		[902]   =  "%1d",   -- Inboard spoiler override (ORIDE|NORM) COVER
+		[903]   =  "%1d",   -- Outboard spoiler override (ORIDE|NORM) COVER
+		[908]   =  "%1d",   -- Inboard spoiler override (ORIDE|NORM)
+		[907]   =  "%1d",   -- Outboard spoiler override (ORIDE|NORM)
 
 		-- Caution Advisory Indicator
 		[15037] =  "%.1f",   -- PITCH STAB 1 - inoperative pitch channel
@@ -833,6 +833,27 @@ ExportScript.ConfigEveryFrameArguments =
 	-- [END B1] -------------------------------------------------------------------------------
 
 	-- [B2 RIO - Left Vertical Console] -------------------------------------------------------
+    [58]  =  "%.1f",   --      WEAP_Elec_Fuse
+    [59]  =  "%.2f",   --      WEAP_Type_Wheel
+
+    [60]  =  "%.1f",   --      WEAP_Bomb_SinglePairs
+    [61]  =  "%.1f",   --      WEAP_Bomb_StepRipple
+    [62]  =  "%.1f",   --      WEAP_AG_Gun
+    [63]  =  "%.1f",   --      WEAP_Mech_Fuse
+    [64]  =  "%.1f",   --      WEAP_Jett_Station6
+    [65]  =  "%.1f",   --      WEAP_Jett_Station3
+    [66]  =  "%.1f",   --      WEAP_Jett_RackWeapons
+    [67]  =  "%.1f",   --      WEAP_Jett_RightTank
+    [68]  =  "%.1f",   --      WEAP_Jett_Station1
+    [69]  =  "%.1f",   --      WEAP_Jett_Station4
+    [70]  =  "%.1f",   --      WEAP_Jett_Station5
+    [71]  =  "%.1f",   --      WEAP_Jett_Station8
+    [72]  =  "%.1f",   --      WEAP_MSL_SPD_Gate
+    [73]  =  "%.1f",   --      WEAP_Jett_LeftTank
+    [74]  =  "%.1f",   --      WEAP_AA_Launch
+    [75]  =  "%.1f",   --      WEAP_Missile_Option
+
+    [78]  =  "%.1f",   --      WEAP_Selective_Jett
 	-- [END B2] -------------------------------------------------------------------------------
 
 	-- [B3 RIO - Left Instrument Panel] -------------------------------------------------------
@@ -888,6 +909,27 @@ ExportScript.ConfigEveryFrameArguments =
         [214] = "%.1f",   -- AN/ALE-37 Chaff Burst Quantity, (-0.2, 0, 1)
         [215] = "%.1f",   -- AN/ALE-37 Chaff Burst Interval, (-0.2, 0, 1)
         [216] = "%1d",   -- AN/ALE-37 Programmer Reset, (1, 0, 1)
+
+        --   DECM(53)
+        [9950] = "%.2f",   -- DECM ALQ-100 Volume, (0, 0, 1)
+        [151]  = "%.1f",   -- DECM ALQ-100 Power/Mode, (0.2, 0, 1)
+        [493]  = "%.1f",   -- DECM_LIGHT
+
+        --   DATALINK(52)
+        [96] = "%1d",   -- Beacon Power, (1, -1, 1)
+        [117] = "%1d",   -- ACLS test, (1, 0, 1)
+        [118] = "%.2f",   -- Beacon mode, (0.166667, 0, 1.000002)
+        [175] = "%1d",   -- Datalink Antenna (no function), (1, 0, 1)
+        [176] = "%1d",   -- Datalink Reply (no function), (1, 0, 1)
+        [177] = "%1d",   -- Datalink CAINS/TAC, (1, 0, 1)
+        [191] = "%1d",   -- Datalink Antijam (no function), (1, -1, 1)
+        [413] = "%1d",   -- Datalink Power, (1, -1, 1)
+
+        [195] = "%.2f",   -- Datalink freq 1MHz, (-0.11111111111111, 0, 1)
+        [196] = "%.2f",   -- Datalink freq 10MHz, (-0.11111111111111, 0, 1)
+        [197] = "%.2f",   -- Datalink freq 100kHz, (-0.11111111111111, 0, 1)
+        [222] = "%.2f",   -- Datalink address high, (-0.11111111111111, 0, 1)
+        [223] = "%.2f",   -- Datalink address low, (-0.11111111111111, 0, 1)
 	-- [END B7] -------------------------------------------------------------------------------
 
 	-- [B8 RIO - Right Knee Panel] ------------------------------------------------------------
@@ -1121,6 +1163,7 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	-----Get F14 Radio Frequencies----- Bailey
 	-----------------------------------
 	ExportScript.flareAndChaffCounters(mainPanelDevice)
+	ExportScript.Datalink(mainPanelDevice)
 
 	-----UHF-----
 
@@ -1557,6 +1600,7 @@ function ExportScript.displayFuel(mainPanelDevice) -- Fuel Gauges and output on 
 	ExportScript.Tools.SendData(56000, "L\n" .. leftFuel)							-- Return Total Left Fuel Qty Formatted like F-14 Gauge
 	ExportScript.Tools.SendData(56004, "R\n" .. rightFuel)							-- Return Total Right Fuel Qty Formatted like F-14 Gauge
 	ExportScript.Tools.SendData(56010, "FUEL\n" .. totalFuel .. "\nQTY")			-- Return Total Fuel Qty Formatted like F-14 Gauge
+	ExportScript.Tools.SendData(56011, "FUEL\nTOTAL\n" .. totalFuel .. "\nLBS")			-- Return Total Fuel Qty Formatted like F-14 Gauge
 	ExportScript.Tools.SendData(56020, "BINGO\n" .. bingoFuel)						-- Return Total Bingo Fuel Qty Formatted like F-14 Gauge
 	ExportScript.Tools.SendData(56024, "BINGO " .. bingoFuel .. "\nTOTAL " .. totalFuel .. "\n" .. aftAndL .. "  |  " .. fwdAndR .. "\n   L    |    R   \n" .. leftFuel .. "  |  " .. rightFuel)  -- Nice Multi Gauge
 end
@@ -1580,6 +1624,31 @@ function ExportScript.flareAndChaffCounters(mainPanelDevice) -- It seems like th
 	ExportScript.Tools.SendData(5382, flareCount)
     ExportScript.Tools.SendData(5383, "Chaff\n" .. chaffCount)
     ExportScript.Tools.SendData(5384, "Flare\n" .. flareCount)
+end
+
+function ExportScript.Datalink(mainPanelDevice) -- It seems like the roller rolls and jitters way too much for calculations
+    local datalink_10 = mainPanelDevice:get_argument_value(196)
+    local datalink_1  = mainPanelDevice:get_argument_value(195)
+    local datalink_01 = mainPanelDevice:get_argument_value(197)
+
+    local datalink_address_high = mainPanelDevice:get_argument_value(222)
+    local datalink_address_low  = mainPanelDevice:get_argument_value(223)
+
+    if datalink_10 >= 1 then
+        datalink_10 = 0.9
+    end
+    if datalink_1 >= 1 then
+        datalink_1 = 0.9
+    end
+    if datalink_01 >= 1 then
+        datalink_01 = 0.9
+    end
+
+    local datalink_freq = math.floor(3 .. datalink_10 * 10) .. math.floor(datalink_1 * 10).. "." ..math.floor(datalink_01 * 10)
+    local datalink_addr = math.floor(datalink_address_high * 10) .. math.floor(datalink_address_low * 10)
+
+	ExportScript.Tools.SendData(5001, datalink_freq)
+	ExportScript.Tools.SendData(5003, datalink_addr)
 end
 
 function ExportScript.Linearize(current_value, raw_tab, final_tab)
