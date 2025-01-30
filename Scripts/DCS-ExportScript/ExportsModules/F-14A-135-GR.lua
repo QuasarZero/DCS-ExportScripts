@@ -856,6 +856,38 @@ ExportScript.ConfigEveryFrameArguments =
 		[2120]  =  "%.1f",   -- FUEL_TotalFuelRIO10  (ten lbs of fuel in decimal 0.7 = 70 lbs)													[F-14 DOESN'T DISPLAY TENS OF LBS]
 		[2135]  =  "%.1f",   -- FUEL_TotalFuelRIO1 (lbs of fuel in decimal 0.2 = 2 lbs)															[F-14 DOESN'T DISPLAY]
 
+        --   COUNTERMEASURES(5)
+        [385] = "%1d",   -- AN/ALE-37 Flare Counter, (1, 0, 1)
+        [386] = "%1d",   -- AN/ALE-37 Chaff Counter, (1, 0, 1)
+        [387] = "%1d",   -- AN/ALE-37 Jammer Dispense, (1, 1, 0)
+        [388] = "%1d",   -- AN/ALE-37 Flare Dispense, (1, 1, 0)
+        [389] = "%1d",   -- AN/ALE-37 Chaff Dispense, (1, 1, 0)
+        [390] = "%1d",   -- AN/ALE-37 Power/Mode, (1, -1, 1)
+        [391] = "%1d",   -- AN/ALE-37 Flare Salvo, (1, 0, 1)
+        [392]  =  "%.1f",   --  CMDS_Chaff_Counter_Roller_10
+        [393]  =  "%.1f",   --  CMDS_Chaff_Counter_Roller_1
+        [394]  =  "%.1f",   --  CMDS_Flare_Counter_Roller_10
+        [395]  =  "%.1f",   --  CMDS_Flare_Counter_Roller_1
+        [396]  =  "%.1f",   --  CMDS_Jammer_Counter_Roller_10
+        [397]  =  "%.1f",   --  CMDS_Jammer_Counter_Roller_1
+        [398] = "%1d",   -- AN/ALE-37 Flare Mode, (1, -1, 1)
+        [399] = "%1d",   -- AN/ALE-37 Jammer Counter, (1, 0, 1)
+
+        [202] = "%.2f",   -- AN/ALE-37 Chaff Salvo Interval, (0.25, 0, 1)
+        [203] = "%.4f",   -- AN/ALE-37 Chaff Salvo Quantity, (0.16666666666667, 0, 1)
+        [204] = "%.4f",   -- AN/ALE-37 Jammer Quantity, (0.33333333333333, 0, 1)
+        [205] = "%.1f",   -- AN/ALE-37 Flare Quantity, (0.2, 0, 1)
+        [206] = "%.1f",   -- AN/ALE-37 L10 Load Type, (0.5, 0, 1)
+        [207] = "%.1f",   -- AN/ALE-37 L20 Load Type, (0.5, 0, 1)
+        [208] = "%.1f",   -- AN/ALE-37 R20 Load Type, (0.5, 0, 1)
+        [209] = "%.1f",   -- AN/ALE-37 R10 Load Type, (0.5, 0, 1)
+        [210] = "%.2f",   -- AN/ALE-37 Flare Interval, (0.25, 0, 1)
+        [211] = "%.4f",   -- AN/ALE-37 Jammer Interval Units, (-0.11111111111111, 0, 1)
+        [212] = "%.4f",   -- AN/ALE-37 Jammer Interval Tens, (-0.11111111111111, 0, 1)
+        [213] = "%.4f",   -- AN/ALE-37 Jammer Interval Hundreds, (-0.11111111111111, 0, 1)
+        [214] = "%.1f",   -- AN/ALE-37 Chaff Burst Quantity, (-0.2, 0, 1)
+        [215] = "%.1f",   -- AN/ALE-37 Chaff Burst Interval, (-0.2, 0, 1)
+        [216] = "%1d",   -- AN/ALE-37 Programmer Reset, (1, 0, 1)
 	-- [END B7] -------------------------------------------------------------------------------
 
 	-- [B8 RIO - Right Knee Panel] ------------------------------------------------------------
@@ -1088,6 +1120,7 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	-----------------------------------
 	-----Get F14 Radio Frequencies----- Bailey
 	-----------------------------------
+	ExportScript.flareAndChaffCounters(mainPanelDevice)
 
 	-----UHF-----
 
@@ -1537,6 +1570,16 @@ function ExportScript.displayAltitude(mainPanelDevice) -- Altitude A4 ----------
     local x = {0, 0.057, 0.1, 0.141, 0.212, 0.328, 0.427, 0.518, 0.588, 0.646, 0.731, 0.801, 0.867, 0.915, 1.000}
     local y = {0, 80, 100, 120, 150, 200, 250, 300, 350, 400, 500, 600, 700, 800, 1000} -- 1000 KIAS is fake just to fill the range
     ExportScript.Tools.SendData(52261, string.format("%d", ExportScript.Linearize(mainPanelDevice:get_argument_value(2129), x, y)) .. "\nKNOTS")
+end
+
+function ExportScript.flareAndChaffCounters(mainPanelDevice) -- It seems like the roller rolls and jitters way too much for calculations
+	local chaffCount = math.floor((mainPanelDevice:get_argument_value(392) * 10) + 0.5) .. (math.floor((mainPanelDevice:get_argument_value(393) * 10) + 0.5) % 10)
+	local flareCount = math.floor((mainPanelDevice:get_argument_value(394) * 10) + 0.5) .. (math.floor((mainPanelDevice:get_argument_value(395) * 10) + 0.5) % 10)
+
+	ExportScript.Tools.SendData(5381, chaffCount)
+	ExportScript.Tools.SendData(5382, flareCount)
+    ExportScript.Tools.SendData(5383, "Chaff\n" .. chaffCount)
+    ExportScript.Tools.SendData(5384, "Flare\n" .. flareCount)
 end
 
 function ExportScript.Linearize(current_value, raw_tab, final_tab)
