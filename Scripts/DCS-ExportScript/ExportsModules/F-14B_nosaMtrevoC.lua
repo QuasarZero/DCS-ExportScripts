@@ -775,6 +775,61 @@ ExportScript.ConfigEveryFrameArguments =
 
 -- RIO OFFICER COCKPIT ------------------------------------------------------------------------
 	-- [B1 RIO - Left Side Console] -----------------------------------------------------------
+    [123] = "%1d",   -- CAP btn 5, (1, 0, 1)
+    [124] = "%1d",   -- CAP btn 4, (1, 0, 1)
+    [125] = "%1d",   -- CAP btn 3, (1, 0, 1)
+    [126] = "%1d",   -- CAP btn 2, (1, 0, 1)
+    [127] = "%1d",   -- CAP btn 1, (1, 0, 1)
+    [128] = "%1d",   -- CAP TNG NBR, (1, 0, 1)
+    [129] = "%1d",   -- CAP btn 10, (1, 0, 1)
+    [130] = "%1d",   -- CAP btn 9, (1, 0, 1)
+    [131] = "%1d",   -- CAP btn 8, (1, 0, 1)
+    [132] = "%1d",   -- CAP btn 7, (1, 0, 1)
+    [133] = "%1d",   -- CAP btn 6, (1, 0, 1)
+    [134] = "%1d",   -- CAP PGM RSTRT, (1, 0, 1)
+    [136] = "%1d",   -- CAP LONG 6, (1, 0, 1)
+    [137] = "%1d",   -- CAP LAT 1, (1, 0, 1)
+    [138] = "%1d",   -- CAP NBR 2, (1, 0, 1)
+    [139] = "%1d",   -- CAP 7, (1, 0, 1)
+    [140] = "%1d",   -- CAP HDG 8, (1, 0, 1)
+    [141] = "%1d",   -- CAP SPD 3, (1, 0, 1)
+    [142] = "%1d",   -- CAP 9, (1, 0, 1)
+    [143] = "%1d",   -- CAP ALT 4, (1, 0, 1)
+    [144] = "%1d",   -- CAP BRG 0, (1, 0, 1)
+    [145] = "%1d",   -- CAP RNG 5, (1, 0, 1)
+    [146] = "%1d",   -- CAP N+E, (1, 0, 1)
+    [147] = "%1d",   -- CAP S-W, (1, 0, 1)
+    [148] = "%1d",   -- CAP clear, (1, 0, 1)
+    [149] = "%1d",   -- CAP enter, (1, 0, 1)
+    [98] = "%.1f",   -- CAP category, (0.2, 0, 1)
+
+    [5550]  =  "%.1f",   --      CAP_light_CLEAR
+    [5551]  =  "%.1f",   --      CAP_light_SW
+    [5552]  =  "%.1f",   --      CAP_light_NE
+    [5553]  =  "%.1f",   --      CAP_light_ENTER
+    [5554]  =  "%.1f",   --      CAP_light_1
+    [5555]  =  "%.1f",   --      CAP_light_2
+    [5556]  =  "%.1f",   --      CAP_light_3
+    [5557]  =  "%.1f",   --      CAP_light_4
+    [5558]  =  "%.1f",   --      CAP_light_5
+    [5559]  =  "%.1f",   --      CAP_light_6
+    [5560]  =  "%.1f",   --      CAP_light_7
+    [5561]  =  "%.1f",   --      CAP_light_8
+    [5562]  =  "%.1f",   --      CAP_light_9
+    [5563]  =  "%.1f",   --      CAP_light_0
+    [5564]  =  "%.1f",   --      CAP_light_msg_btn6
+    [5565]  =  "%.1f",   --      CAP_light_msg_btn7
+    [5566]  =  "%.1f",   --      CAP_light_msg_btn8
+    [5567]  =  "%.1f",   --      CAP_light_msg_btn9
+    [5568]  =  "%.1f",   --      CAP_light_msg_btn1
+    [5569]  =  "%.1f",   --      CAP_light_msg_btn2
+    [5570]  =  "%.1f",   --      CAP_light_msg_btn3
+    [5571]  =  "%.1f",   --      CAP_light_msg_btn4
+    [5572]  =  "%.1f",   --      CAP_light_msg_btn5
+    [5573]  =  "%.1f",   --      CAP_light_TNG_NBR
+    [5574]  =  "%.1f",   --      CAP_light_PGM_RESTART
+
+    [5590]  =  "%.1f",   --      CAP_light_msg_btn10
 	-- [END B1] -------------------------------------------------------------------------------
 	
 	-- [B2 RIO - Left Vertical Console] -------------------------------------------------------
