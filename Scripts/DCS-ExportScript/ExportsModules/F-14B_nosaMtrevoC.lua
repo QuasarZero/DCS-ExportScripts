@@ -179,7 +179,6 @@ ExportScript.ConfigEveryFrameArguments =
 		[2040]  =  "%.1f",   -- ALR-67 Knob controls audio volume to pilot
 		[2039]  =  "%.1f",   -- SW knob volume of sidewinder audio tone to pilot
 		[2038]  =  "%.1f",   -- V/UHF 2 knob audio from AN/ARC-182 to pilot
-		[0]  =  "%.4f",   -- TACAN CMD switch sets crew member in command of Tacan
 
 		-- ICS Control Panel
 		[2048]  =  "%.1f",   -- VOL knob from RIO to pilot
@@ -201,7 +200,6 @@ ExportScript.ConfigEveryFrameArguments =
 		[16007]  =  "%.4f",   -- L ENG MODE SELECT (PRI|SEC)
 		[16008]  =  "%.4f",   -- R ENG MODE SELECT (PRI|SEC)
 
-		[0]  =  "%.4f",   -- Target Designate swith to designate ground targ. on HUD (up/down/forward designate)
 
 		-- Inlet Ramps/Throttle Control Panel
 		[2104]  =  "%.4f",   -- THROTTLE MODE (AUTO|BOOST|MAN)
@@ -209,21 +207,18 @@ ExportScript.ConfigEveryFrameArguments =
 		[2100]  =  "%.4f",   -- L INLET RAMP (STOW|AUTO)
 		[2101]  =  "%.4f",   -- R INLET RAMP (STOW|AUTO)
 		[2102]  =  "%.4f",   -- ENG CRANK (L|R)
-		[0]  =  "%.4f",   -- BACK UP IGNITION (ON|NORM)
-		[0]  =  "%.4f",   -- RUDDER TRIM (L|R)
 
 
 
 
 -- A1b
 		-- Oxygen Vent Airflow Control Panel
-		[0]  =  "%.4f",   -- VENT AIRFLOW dial
 		[8114]  =  "%.4f",   -- OXYGEN switch (ON|OFF)
 
 		-- TACAN Control Panel
+		[292]  = "%1d",   -- TACAN CMD Button PLT
 		[8888]  =  "%.4f",   -- Dual rotary switch Outer Dial
 		[8889]  =  "%.4f",   -- Dual rotary switch Inner Dial
-		[0]  =  "%.4f",   -- TACAN channel 3 digit
 		[8050]  =  "%1d",   -- Status Go
 		[8051]  =  "%1d",   -- Status NO-GO
 		[2115]  =  "%1d",   -- BIT button initiating TACAN BIT
@@ -233,28 +228,21 @@ ExportScript.ConfigEveryFrameArguments =
 		[2042]  =  "%1d",   -- MODE (NORMAL|INVERSE)
 
 		-- UHF 1 (AN/ARC-159) Radio
-		[2031]  =  "%.1f",   -- VOL knob controls radio to pilot vol.
-		[2035]  =  "%.4f",   -- SQL switch squelch (ON|OFF)
-		[2030]  =  "%.4f",   -- Freq. Select Switch 1
-		[2029]  =  "%.4f",   -- Freq. Select Switch 2
-		[2028]  =  "%.4f",   -- Freq. Select Switch 3
-		[2026]  =  "%.4f",   -- Freq. Select Switch 4
-		[0]  =  "%.4f",   -- FREQ/(CHAN) display ??? (maybe the switch values above???)
-		[8115]  =  "%.4f",   -- READ button
-		[2027]  =  "%.1f",   -- BRT knob display brightness
-		[16009] =  "%.4f",   -- LOAD button
-		[2034]  =  "%.2f",   -- Function selector knob (ADF|BOTH|MAIN|OFF)
-		[2032]  =  "%.4f",   -- CHAN SEL knob selects preset channels
-		[2033]  =  "%.1f",   -- Mode selector knob (GUARD|MANUAL|PRESET)
-		[16010] =  "%.4f",   -- TONE button transmits tone on freq.
+		[2031]  =  "%.1f",  -- VOL knob controls radio to pilot vol.
+		[2035]  =  "%1d",   -- SQL switch squelch (ON|OFF)
+		[2030]  =  "%1d",   -- Freq. Select Switch 1
+		[2029]  =  "%1d",   -- Freq. Select Switch 2
+		[2028]  =  "%1d",   -- Freq. Select Switch 3
+		[2026]  =  "%1d",   -- Freq. Select Switch 4
+		[8115]  =  "%1d",   -- READ button
+		[2027]  =  "%.1f",  -- BRT knob display brightness
+		[16009] =  "%1d",   -- LOAD button
+		[2034]  =  "%.2f",  -- Function selector knob (ADF|BOTH|MAIN|OFF)
+		[2032]  =  "%.4f",  -- CHAN SEL knob selects preset channels
+		[2033]  =  "%.1f",  -- Mode selector knob (GUARD|MANUAL|PRESET)
+		[16010] =  "%1d",   -- TONE button transmits tone on freq.
 
 		-- Throttle Buttons
-		[0]  =  "%.4f",   -- Speed Brake switch (EXT|RET)
-		[0]  =  "%.4f",   -- Wing Sweep switch (AUTO|FWD|AFT|BOMB)
-		[0]  =  "%.4f",   -- PLM button lockon
-		[0]  =  "%.4f",   -- CAGE/SEAM button lockon
-		[0]  =  "%.4f",   -- Exterior Light switch (ON|OFF)
-		[0]  =  "%.4f",   -- ICS PIT switch (ICS|BOTH|UHF1|UHF2)
 
 
 
@@ -272,9 +260,6 @@ ExportScript.ConfigEveryFrameArguments =
 		[1071]  =  "%.4f",   -- MASTER RESET button resets CADC failure
 
 		-- Control surface position indicator
-		[0]  =  "%.4f",   -- L SPOILER DN-Down/flush | Up-Arrow-Above wing | Down-Arrow-Below Wing 8315-8322
-		[0]  =  "%.4f",   -- C SPOILER DN-Down/flush | Up-Arrow-Above wing | Down-Arrow-Below Wing
-		[0]  =  "%.4f",   -- R SPOILER DN-Down/flush | Up-Arrow-Above wing | Down-Arrow-Below Wing
 		[1092]  =  "%.4f",   -- RUDDER position indicators Left
 		[1093]  =  "%.4f",   -- RUDDER position indicators Right
 		[1090]  =  "%.4f",   -- HORIZ. STAB. Position indicator Left
@@ -285,8 +270,6 @@ ExportScript.ConfigEveryFrameArguments =
 		[16015] =  "%.4f",   -- Landing Gear Emer. Extension
 		[631]   =  "%.4f",   -- HYD ISOL (FLT|T.O.LDG)
 		[999]   =  "%.4f",   -- Transition Light
-		[0]  =  "%.4f",   -- EMERG STORES button (illuminates when pressed)
-		[0]  =  "%.4f",   -- EMERG STORES light ???
 		[1075]  =  "%.4f",   -- NOSE STRUT switch (EXTD|OFF|KNEEL)
 		[237]   =  "%.4f",   -- Brake Pull Handle
 		[2049]  =  "%.4f",   -- EJECT CMD Indicator (PILOT|MCO)
@@ -295,7 +278,6 @@ ExportScript.ConfigEveryFrameArguments =
 		[8302]  =  "%.4f",   -- Left Landing Gear Indicator
 		[8305]  =  "%.4f",   -- Right Landing Gear Indicator
 		[8301]  =  "%.4f",   -- Nose Landing Gear Indicator
-		[0]  =  "%.4f",   -- SPD BK Indicator
 		[8310]  =  "%.4f",   -- Slats Indicator
 		[8311]  =  "%.4f",   -- Flaps Indicator
 
@@ -314,26 +296,11 @@ ExportScript.ConfigEveryFrameArguments =
 		[19108] =  "%.4f",  -- Radar Altimeter Test Light
 
 		-- Servopneumatic Altimeter
-		[0]  =  "%.4f",   -- Altimeter readout 112/262/300-304
 		[104]   =  "%.4f",   -- Altimeter Baro readout
 		[306]   =  "%.4f",   -- Baroset knob sets local press. in in.Hg
-		[0]  =  "%.4f",   -- Local barometric pressure (Kollsman Window)
 		[307]   =  "%.4f",   -- Mode switch
 
 		-- Airspeed Mach Indicator
-		[0]  =  "%.4f",   -- Airspeed dial ???
-		[0]  =  "%.4f",   -- Indicated airspeed scale (outer) ???
-		[0]  =  "%.4f",   -- Indicated airspeed scale (inner) ???
-		[0]  =  "%.4f",   -- Mach number scale ???
-		[0]  =  "%.4f",   -- Indicated airspeed index pointer ???
-		[0]  =  "%.4f",   -- Mach Number index pointer ???
-		[0]  =  "%.4f",   -- Safe Mach number index pointer ???
-		[0]  =  "%.4f",   -- Index knob pushed in ???
-		[0]  =  "%.4f",   -- Index knob pulled out ???
-
-		[0]  =  "%.4f",   -- Vertical Velocity Indicator
-		[0]  =  "%.4f",   -- Left Engine Fuel Shutoff Handle
-		[0]  =  "%.4f",   -- Angle of Attack Indicator
 
 
 
@@ -387,18 +354,11 @@ ExportScript.ConfigEveryFrameArguments =
 		[1039]  =  "%.4f",   -- HDG controls heading reference bug in TACAN mode
 		[1040]  =  "%.4f",   -- CRS controls cour in MAN and TACAN mode
 		[1041]  =  "%.4f",   -- TEST allows reset of HSD
-		
-		[0]  =  "%.4f",   -- BIT indicator failure in HSD (shows flags ???)
-		[0]  =  "%.4f",   -- Bit Indicator knob ???
 
 
 
 
 -- 6d
-		-- Center Panel at bottom
-		[0]  =  "%.4f",   -- Cabin Pressure Altimeter in 1,000 foot increments (0-50,000') 935|2210
-		[0]  =  "%.4f",   -- Emerg. Brake Press. Indicator Park (2150-3000 psi green / red is 1900-2150 psi) 999|9260
-		[0]  =  "%.4f",   -- Emerg. Aux Press. Indicator Park (2150-3000 psi green / red is 1900-2150 psi) 9261
 
 
 
@@ -413,33 +373,8 @@ ExportScript.ConfigEveryFrameArguments =
 
 		[15097] =  "%.4f",   -- Standby Compass
 
-
-
-
 -- A8
-		[0]  =  "%.4f",   -- Wing Sweep Indicator 404|405|507|508|2001|2002 flags: 15091-15095
-		[0]  =  "%.4f",   -- Right Engine Fuel Shutoff Handle
-		[0]  =  "%.4f",   -- Standby Attitude Indicator ??
-
-		-- UHF/VHF Remote Indicators
-		[0]  =  "%.4f",   -- UHF 1 frequency display
-		[0]  =  "%.4f",   -- UHF 1 TEST button displays 888.888 if good
-		[0]  =  "%.4f",   -- UHF 1 DIM controls display brightness
-		[0]  =  "%.4f",   -- V/UHF 2 frequency display
-		[0]  =  "%.4f",   -- V/UHF 2 TEST button displays 888.888 if good
-		[0]  =  "%.4f",   -- V/UHF 2 BRT controls display brightness
-		
 		[353]  =  "%0.1f",   -- VHF/UHF ARC-182 Freq Mode (UHF GUARD|V/UHF|V/UHF GUARD|PRESET|V/UHF|LOAD?) -- Bailey
-
-		-- Bearing Distance Heading Indicator BDHI
-		[0]  =  "%.4f",   -- No. 2 Bearing Pointer magnetic course to TACAN station
-		[0]  =  "%.4f",   -- Compass Rose magnetic heading
-		[0]  =  "%.4f",   -- No. 1 bearing pointer magnetic course to UHF/ADF station
-		[0]  =  "%.4f",   -- Distance Counter in nautical miles
-
-		-- ALR-67 Indicator
-		[0]  =  "%.4f",   -- INT knob intensity brightness
-
 		[224]   =  "%.4f",   -- Canopy Jettison Handle
 
 
@@ -568,8 +503,8 @@ ExportScript.ConfigEveryFrameArguments =
 		[941]   =  "%.4f",   -- ANTI-ICE switch (ORIDE|AUTO|OFF)
 
 		-- Hydraulic Transfer Pump Switch
-		[630]   =  "%.4f",   -- Transfer Pump switch cover
-		[629]   =  "%.4f",   -- HYD TRANSFER PUMP switch (NORMAL|SHUTOFF)
+		[630]   =  "%1d",   -- Transfer Pump switch cover
+		[629]   =  "%1d",   -- HYD TRANSFER PUMP switch (NORMAL|SHUTOFF)
 
 
 
@@ -577,7 +512,6 @@ ExportScript.ConfigEveryFrameArguments =
 
 -- 11b
 		-- Compass Control Panel
-		[0]  =  "%.4f",   -- SYNC Indicator 2221?
 		[906]   =  "%.4f",   -- N-S Switch hemisphere (N|S)
 		[909]   =  "%.4f",   -- Lat Knob (0-90)
 		[1026]  =  "%.4f",   -- Lat Knob (0-90)
@@ -611,18 +545,15 @@ ExportScript.ConfigEveryFrameArguments =
 		[15098] =  "%.4f",   -- MASTER TEST SELECTOR Knob Push
 		[15010] =  "%.4f",   -- GO light - light used in test to indicate go/no-go conditions of that system
 		[15011] =  "%.4f",   -- NO-GO light - light used in test to indicate go/no-go conditions of that system
-		[928]   =  "%.4f",   -- EMERG FLT HYD (HIGH|LOW|AUTO(LOW))
-		[615]   =  "%.4f",   -- EMERG FLT HYD switch cover
+		[928]   =  "%1d",   -- EMERG FLT HYD (HIGH|LOW|AUTO(LOW))
+		[615]   =  "%1d",   -- EMERG FLT HYD switch cover
 
 		-- Canopy Defog/Cabin Air Lever
-		[0]  =  "%.4f",   -- CABIN AIR
-		[0]  =  "%.4f",   -- CANOPY DEFOG
 
 
 
 
 -- 12
-		[0]  =  "%.4f",   -- Canopy Control Handle (BOOST|CLOSE|HOLD|OPEN|AUX OPEN)
 
 
 	-- [END In Development] -------------------------------------------------------------------
@@ -857,6 +788,52 @@ ExportScript.ConfigEveryFrameArguments =
 	-- [END B2] -------------------------------------------------------------------------------
 
 	-- [B3 RIO - Left Instrument Panel] -------------------------------------------------------
+
+    --   TACAN(47)
+    [371]  = "%1d",   -- TACAN BIT, (1, 0, 1)
+    [372]  = "%1d",   -- TACAN Channel X/Y, (-1, 0, 1)
+    [373]  = "%1d",   -- TACAN Mode Normal/Inverse, (-1, 0, 1)
+    [374]  = "%.2f",  -- TACAN Mode, (0.25, 0, 1)
+    [375]  = "%.1f",  -- TACAN Volume, (0, 0, 1)
+    [135]  = "%1d",   -- TACAN CMD Button RIO
+    [290]  = "%1d",   -- TACAN Indicator_PLT
+    [291]  = "%1d",   -- TACAN Indicator_NFO
+    [8890] = "%.4f",  -- TACAN Channel Lever (Ones), (0.11111111111111, 0, 1)
+    [8891] = "%.4f",  -- TACAN Channel Wheel (Tens), (0.083333333333333, 0, 1)
+    [8892] = "%1d",   -- TACAN LIGHT NOGO RIO
+    [8893] = "%1d",   -- TACAN LIGHT GO RIO
+
+    --   ARC182(4)
+    [350]   = "%.1f",  -- VHF/UHF ARC-182 Volume RIO, (0, 0, 1)
+    [351]   = "%1d",   -- VHF/UHF ARC-182 Squelch Switch, (1, 0, 1)
+    [352]   = "%.4f",  -- VHF/UHF ARC-182 Preset Channel Selector, (0.0833333333, 0, 0.9166666663)
+    [353]   = "%.1f",  -- VHF/UHF ARC-182 Freq Mode, (0.2, 0, 1)
+    [354]   = "%1d",   -- VHF/UHF ARC-182 100MHz & 10MHz, (1, 1, 0)
+    [355]   = "%1d",   -- VHF/UHF ARC-182 1MHz, (1, 1, 0)
+    [356]   = "%1d",   -- VHF/UHF ARC-182 0.1MHz, (1, 1, 0)
+    [357]   = "%1d",   -- VHF/UHF ARC-182 0.025MHz, (1, 1, 0)
+    [358]   = "%.2f",  -- VHF/UHF ARC-182 MODE, (0.25, 0, 1)
+    [359]   = "%1d",   -- VHF/UHF ARC-182 FM/AM Switch, (1, 0, 1)
+    [360]   = "%.1f",  -- VHF/UHF ARC-182 Display Brightness, (0, 0, 1)
+    [1030]  = "%.1f",  -- VHF/UHF Radio Remote Display Brightness, (1, 0, 1)
+    [15003] = "%1d",   -- VHF/UHF Radio Remote Display Test, (1, 0, 1)
+    [106]   = "%.1f",  -- VHF/UHF TOD_RIO
+    [100]   = "%.1f",  -- VHF/UHF NORM_AJ_RIO
+
+
+    [115] = "%.1f",  -- KY-28 Radio Selector, (0.5, 0, 1)
+    [116] = "%.1f",  -- KY-28 Power Mode, (0.5, 0, 1)
+    [150] = "%1d",   -- KY-28 ZEROIZE Cover, (-1, 0, 1)
+    [361] = "%1d",   -- KY-28 ZEROIZE, (1, 0, 1)
+    [380] = "%1d",   -- V/UHF 2 ANT Switch, (-1, 0, 1)
+    [381] = "%1d",   -- XMTR SEL Switch, (-1, -1, 1)
+    [382] = "%1d",   -- KY MODE Switch, (-1, -1, 1)
+    [383] = "%.1f",  -- UHF ARC-159 Volume RIO, (0, 0, 1)
+    [401] = "%.1f",  -- ICS Amplifier Selector, (0.5, 0, 1)
+    [400] = "%.1f",  -- ICS Volume, (0, 0, 1)
+    [402] = "%1d",   -- ICS Function Selector, (-1, -1, 1)
+
+
 	-- [END B3] -------------------------------------------------------------------------------
 
 	-- [B4 RIO - Center Panel] ----------------------------------------------------------------
@@ -919,6 +896,7 @@ ExportScript.ConfigEveryFrameArguments =
         [96] = "%1d",   -- Beacon Power, (1, -1, 1)
         [117] = "%1d",   -- ACLS test, (1, 0, 1)
         [118] = "%.2f",   -- Beacon mode, (0.166667, 0, 1.000002)
+        [2016] = "%1d",   --      ACLS_TEST_LIGHT
         [175] = "%1d",   -- Datalink Antenna (no function), (1, 0, 1)
         [176] = "%1d",   -- Datalink Reply (no function), (1, 0, 1)
         [177] = "%1d",   -- Datalink CAINS/TAC, (1, 0, 1)
@@ -1182,19 +1160,18 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	1.0000 = GUARD
 	]]
 
-	-- 10 159 base
-	-- 11 159 pilot
-	-- 12 159 rio
+	-- 9 159 base
+	-- 10 159 pilot
+	-- 11 159 rio
 	-- 12 159 list
 	-- 13 182 base
-	-- 14 182 base
+	-- 14 182 pilot
 
 	local UHF_ARC159_infoBase = ExportScript.Tools.split(list_indication(9), "%c")--this contains the formated table of the base radio
 	local UHF_ARC159_readoutBase = UHF_ARC159_infoBase[10] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
 	local UHF_ARC159_inRead = string.format("%1d", mainPanelDevice:get_argument_value(8115))
 
-	
 	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
 		ExportScript.Tools.SendData(60000, string.format("ARC-159\n" .. UHF_ARC159_readoutBase:sub(1,3) .. "." .. UHF_ARC159_readoutBase:sub(4,6)))
 		ExportScript.Tools.SendData(60001, string.format(UHF_ARC159_readoutBase:sub(1,3) .. "." .. UHF_ARC159_readoutBase:sub(4,6)))
@@ -1257,6 +1234,25 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	elseif VHF_ARC182_FreqMode == "0.6" then
 		ExportScript.Tools.SendData(60006, string.format("ARC-182\n" .. "CH " .. VHF_ARC182_readoutBase:sub(4,6)))
 		ExportScript.Tools.SendData(60007, string.format("CH " .. VHF_ARC182_readoutBase:sub(4,6)))
+	end
+
+
+	local VHF_ARC182_infoPilot = ExportScript.Tools.split(list_indication(14), "%c")--this contains the formated table of the base radio
+	local VHF_ARC182_readoutPilot = VHF_ARC182_infoPilot[16] -- so far it has always been 10 in both channel and freq modes
+	local VHF_ARC182_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(353))
+
+	if VHF_ARC182_FreqMode == "0.0" or VHF_ARC182_FreqMode == "0.2" then
+		ExportScript.Tools.SendData(60008, string.format("ARC-182\n" .. VHF_ARC182_readoutPilot:sub(1,3) .. "." .. VHF_ARC182_readoutPilot:sub(4,6)))
+		ExportScript.Tools.SendData(60009, string.format(VHF_ARC182_readoutPilot:sub(1,3) .. "." .. VHF_ARC182_readoutPilot:sub(4,6)))
+	elseif VHF_ARC182_FreqMode == "0.4" or VHF_ARC182_FreqMode == "0.8" then
+		ExportScript.Tools.SendData(60008, string.format("ARC-182\n" .. VHF_ARC182_readoutPilot:sub(1,3) .. "." .. VHF_ARC182_readoutPilot:sub(4,6)))
+		ExportScript.Tools.SendData(60009, string.format(VHF_ARC182_readoutPilot:sub(1,3) .. "." .. VHF_ARC182_readoutPilot:sub(4,6)))
+	elseif VHF_ARC182_FreqMode == "1.0" then
+		ExportScript.Tools.SendData(60008, string.format("ARC-182\n" .. VHF_ARC182_readoutPilot:sub(1,3) .. "." .. VHF_ARC182_readoutPilot:sub(4,6)))
+		ExportScript.Tools.SendData(60009, string.format(VHF_ARC182_readoutPilot:sub(1,3) .. "." .. VHF_ARC182_readoutPilot:sub(4,6)))
+	elseif VHF_ARC182_FreqMode == "0.6" then
+		ExportScript.Tools.SendData(60008, string.format("ARC-182\n" .. "CH " .. VHF_ARC182_readoutPilot:sub(4,6)))
+		ExportScript.Tools.SendData(60009, string.format("CH " .. VHF_ARC182_readoutPilot:sub(4,6)))
 	end
 
 end
