@@ -1,15 +1,15 @@
---[[  
-  ,d                                                          ,d     	
-  88                                                          88     	
-MM88MMM ,adPPYba,  88,dPYba,,adPYba,   ,adPPYba, ,adPPYYba, MM88MMM  	
-  88   a8"     "8a 88P'   "88"    "8a a8"     "" ""     `Y8   88     	
-  88   8b       d8 88      88      88 8b         ,adPPPPP88   88     	
-  88,  "8a,   ,a8" 88      88      88 "8a,   ,aa 88,    ,88   88,    	
-  "Y888 `"YbbdP"'  88      88      88  `"Ybbd8"' `"8bbdP"Y8   "Y888   F-14B Tomcat Export Script DCS World	
+--[[
+  ,d                                                          ,d
+  88                                                          88
+MM88MMM ,adPPYba,  88,dPYba,,adPYba,   ,adPPYba, ,adPPYYba, MM88MMM
+  88   a8"     "8a 88P'   "88"    "8a a8"     "" ""     `Y8   88
+  88   8b       d8 88      88      88 8b         ,adPPPPP88   88
+  88,  "8a,   ,a8" 88      88      88 "8a,   ,aa 88,    ,88   88,
+  "Y888 `"YbbdP"'  88      88      88  `"Ybbd8"' `"8bbdP"Y8   "Y888   F-14B Tomcat Export Script DCS World
 ___________________________________________________________________________________________________________________________________________________
 ▀▀▀█  version: 0.11  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
-Created by: nosaMtrevoC of ED Forums (dt1)  
+Created by: nosaMtrevoC of ED Forums (dt1)
 
 If you find any errors/ommissions or have any questions in general and for updates, please see this thread on ED Forums:
 https://forums.eagle.ru/showthread.php?p=4387597#post4387597
@@ -73,8 +73,8 @@ Extra ID's created for nice formatted output on Stream Deck See ID Guide Below:
 51057		A3		EIG - Engine RPM L & R tape 			working			NOTE: need "F-14B_A3_RPM.png" included as background (shows vert. tape)
 51059		A3		EIG - Engine Exhaust Temperature		working			NOTE: need "F-14B_A3_TIT.png" included as background (shows vert. tape)
 51061		A3		EIG - Fuel flow tape 		 			working			NOTE: need "F-14B_A3_FF.png" included as background (shows vert. tape)
-51023		A3		Hydraulic Pressure Gauge and Flags 1 	working			
-51063		A3		Hydraulic Pressure Gauge and Flags 2 	working			
+51023		A3		Hydraulic Pressure Gauge and Flags 1 	working
+51063		A3		Hydraulic Pressure Gauge and Flags 2 	working
 51065		A3		Engine Oil Pressure Gauges 				working			L 42 psi | Eng. Oil | R 42 psi
 51068		A3		Engine Nozzle position gauge (tape) 	working			(shows a graphical vertical tape)
 ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ Extra ID's created for nice formatted output on Stream Deck See ID Guide Below:
 ___________________________________________________________________________________________________________________________________________________
 ▀▀▀█  Stream Deck References  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
-The following references (with a picture) can be found (as of June 15, 2020) in Chapter 2 (Cockpit Overview) first 2 pages (pg10 and pg11) of 
+The following references (with a picture) can be found (as of June 15, 2020) in Chapter 2 (Cockpit Overview) first 2 pages (pg10 and pg11) of
 the F-14B manual. This manual is located in the C:\Program Files\Eagle Dynamics\DCS World OpenBeta\Mods\aircraft\F14\Docs Directory as a .pdf
 Can also be found in the official thread for this script at: https://forums.eagle.ru/showthread.php?p=4387597#post4387597
 
@@ -1283,8 +1283,8 @@ end --[[
 
 ___________________________________________________________________________________________________________________________________________________
 ▀▀▀█  Custom functions  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-   █  ExportScript.onff(switch) - Receives a binary and returns string OFF|ON 
-   █  ExportScript.dualTapeString(leftTape, rightTape) - Receives two values (percent of tape) and returns a string tape display (e.g. RPM)    	 
+   █  ExportScript.onff(switch) - Receives a binary and returns string OFF|ON
+   █  ExportScript.dualTapeString(leftTape, rightTape) - Receives two values (percent of tape) and returns a string tape display (e.g. RPM)
    █  ExportScript.rotaryCounter(fp) - receives a fp like 0.1 and returns a string 1 (third charachter), handles negatives and 0 gracefully
    █  ExportScript.drawStationStatusFlags(flagValue) - Draws Station Flags for Weapons on ACM A6a]]
 
@@ -1311,14 +1311,14 @@ end
 function ExportScript.onff(switch)  -- Takes a binary 1(on) or 0(off) and returns string "ON" or "OFF"
 	if switch == 1 then	returnString = "ON" elseif switch == 0 then	returnString = "OFF" end
 	return returnString
-end  
+end
 
 
 function ExportScript.rotaryCounter(fp) -- Takes a value as floating point like 0.1324 and returns 1 as a string or 0.4 as 4 as a string (3'rd character including decimal)
 	local returnString
 	if fp == 1 or fp <= 0 then returnString = "0" else returnString = string.sub(string.format("%.1f", fp), 3, 3) end
 	return returnString
-end	
+end
 
 
 function ExportScript.drawStationStatusFlags(flagValue) -- Takes a 0/1/0.45 and draws nothing/white/checker flag and returns
@@ -1433,7 +1433,7 @@ end
 
 
 function ExportScript.masterArmSwitch(mainPanelDevice) -- Output Master Arm Position
-	if mainPanelDevice:get_argument_value(1047) == -1 then stringOutput = "         ███\n           |\n           |\n\n  ." 
+	if mainPanelDevice:get_argument_value(1047) == -1 then stringOutput = "         ███\n           |\n           |\n\n  ."
 	elseif mainPanelDevice:get_argument_value(1047) == 0 then stringOutput = "           |\n         ███\n           |\n\n  ."
 	else stringOutput = "           |\n           |\n         ███\n\n  ."
 	end
@@ -1560,7 +1560,7 @@ end
 
 function ExportScript.displayFuel(mainPanelDevice) -- Fuel Gauges and output on A9 and B7 ----------------------------------------------
 --[[FUEL Exports Formatted
-	
+
 	NOTE: In case you are wondering to the weird methodology used below to derive fuel totals, I'll try to explain.
 	A combination of how the f-14 module is using this fuel data (e.g. 0.9 might mean 900 lbs, 0.0 would mean 000 lbs and 1.0 would mean 000 lbs
 	also which effects the total if you use math to add them all together, so we can't use a simple method)
@@ -1580,7 +1580,7 @@ function ExportScript.displayFuel(mainPanelDevice) -- Fuel Gauges and output on 
 	value which are two different things. (In my experience most dcs mods only give you access to the latter)
 	Therefore, we first concatenate the number to 0.X by converting it to a string and formatting it as such, and then extract the 3'rd character
 	(I get it, nasty work around, If you have a better solution I'd love to hear it.)
-	
+
 ]]
 	local aftAndL = string.format("%d", mainPanelDevice:get_argument_value(1054) * 7000)
 	local fwdAndR = string.format("%d", mainPanelDevice:get_argument_value(1055) * 7000)
@@ -1618,8 +1618,8 @@ function ExportScript.flareAndChaffCounters(mainPanelDevice) -- It seems like th
 
 	ExportScript.Tools.SendData(5381, chaffCount)
 	ExportScript.Tools.SendData(5382, flareCount)
-	ExportScript.Tools.SendData(5383, "Chaff\n" .. chaffCount)
-	ExportScript.Tools.SendData(5384, "Flare\n" .. flareCount)
+    ExportScript.Tools.SendData(5383, "Chaff\n" .. chaffCount)
+    ExportScript.Tools.SendData(5384, "Flare\n" .. flareCount)
 end
 
 function ExportScript.Datalink(mainPanelDevice) -- It seems like the roller rolls and jitters way too much for calculations
