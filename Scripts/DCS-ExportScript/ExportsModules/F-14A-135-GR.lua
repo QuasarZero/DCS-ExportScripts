@@ -771,20 +771,20 @@ ExportScript.ConfigEveryFrameArguments =
     [61]  =  "%.1f",   --      WEAP_Bomb_StepRipple
     [62]  =  "%.1f",   --      WEAP_AG_Gun
     [63]  =  "%.1f",   --      WEAP_Mech_Fuse
-    [64]  =  "%.1f",   --      WEAP_Jett_Station6
-    [65]  =  "%.1f",   --      WEAP_Jett_Station3
-    [66]  =  "%.1f",   --      WEAP_Jett_RackWeapons
-    [67]  =  "%.1f",   --      WEAP_Jett_RightTank
-    [68]  =  "%.1f",   --      WEAP_Jett_Station1
-    [69]  =  "%.1f",   --      WEAP_Jett_Station4
-    [70]  =  "%.1f",   --      WEAP_Jett_Station5
-    [71]  =  "%.1f",   --      WEAP_Jett_Station8
+    [64]  =  "%1d",   --      WEAP_Jett_Station6
+    [65]  =  "%1d",   --      WEAP_Jett_Station3
+    [66]  =  "%1d",   --      WEAP_Jett_RackWeapons
+    [67]  =  "%1d",   --      WEAP_Jett_RightTank
+    [68]  =  "%1d",   --      WEAP_Jett_Station1
+    [69]  =  "%1d",   --      WEAP_Jett_Station4
+    [70]  =  "%1d",   --      WEAP_Jett_Station5
+    [71]  =  "%1d",   --      WEAP_Jett_Station8
     [72]  =  "%.1f",   --      WEAP_MSL_SPD_Gate
-    [73]  =  "%.1f",   --      WEAP_Jett_LeftTank
+    [73]  =  "%1d",   --      WEAP_Jett_LeftTank
     [74]  =  "%.1f",   --      WEAP_AA_Launch
     [75]  =  "%.1f",   --      WEAP_Missile_Option
 
-    [78]  =  "%.1f",   --      WEAP_Selective_Jett
+    [78]  =  "%1d",   --      WEAP_Selective_Jett
 	-- [END B2] -------------------------------------------------------------------------------
 
 	-- [B3 RIO - Left Instrument Panel] -------------------------------------------------------
@@ -837,6 +837,10 @@ ExportScript.ConfigEveryFrameArguments =
 	-- [END B3] -------------------------------------------------------------------------------
 
 	-- [B4 RIO - Center Panel] ----------------------------------------------------------------
+    [9960]  =  "%.1f",   --      WEAP_Interval_10s
+    [9961]  =  "%.1f",   --      WEAP_Interval_100s
+    [9962]  =  "%.1f",   --      WEAP_Quantity_10s
+    [9963]  =  "%.1f",   --      WEAP_Quantity_1s
 	-- [END B4] -------------------------------------------------------------------------------
 
 	-- [B5 RIO - Center Console] --------------------------------------------------------------
@@ -872,7 +876,7 @@ ExportScript.ConfigEveryFrameArguments =
         [399] = "%1d",   -- AN/ALE-37 Jammer Counter, (1, 0, 1)
 
         [202] = "%.2f",   -- AN/ALE-37 Chaff Salvo Interval, (0.25, 0, 1)
-        [203] = "%.4f",   -- AN/ALE-37 Chaff Salvo Quantity, (0.16666666666667, 0, 1)
+        [203] = "%.1f",   -- AN/ALE-37 Chaff Salvo Quantity, (0.16666666666667, 0, 1)
         [204] = "%.4f",   -- AN/ALE-37 Jammer Quantity, (0.33333333333333, 0, 1)
         [205] = "%.1f",   -- AN/ALE-37 Flare Quantity, (0.2, 0, 1)
         [206] = "%.1f",   -- AN/ALE-37 L10 Load Type, (0.5, 0, 1)
@@ -888,9 +892,18 @@ ExportScript.ConfigEveryFrameArguments =
         [216] = "%1d",   -- AN/ALE-37 Programmer Reset, (1, 0, 1)
 
         --   DECM(53)
-        [9950] = "%.2f",   -- DECM ALQ-100 Volume, (0, 0, 1)
+        [9950] = "%.1f",   -- DECM ALQ-100 Volume, (0, 0, 1)
         [151]  = "%.1f",   -- DECM ALQ-100 Power/Mode, (0.2, 0, 1)
         [493]  = "%.1f",   -- DECM_LIGHT
+
+        --   RWR(54)
+        [2136]  = "%.2f",  -- AN/ALR-67 Display Type, (0.25, 0, 1)
+        [2137]  = "%1d",   -- AN/ALR-67 Mode, (-1, -1, 0)
+        [2138]  = "%.1f",  -- AN/ALR-67 Volume, (1, 0, 1)
+        [2139]  = "%1d",   -- AN/ALR-67 Power, (-1, 0, 1)
+        [2140]  = "%1d",   -- AN/ALR-67 Test, (-1, -1, 0)
+        [376]   = "%.1f",  -- AN/ALR-67 Display Brightness, (1, 0, 1)
+        [16011] = "%.1f",  -- AN/ALR-67 Display Brightness, (1, 0, 1)
 
         --   DATALINK(52)
         [96] = "%1d",   -- Beacon Power, (1, -1, 1)
