@@ -82,7 +82,8 @@ ExportScript.ConfigEveryFrameArguments =
 		-- Eng Control Panel
 	[446]=  "%.1f",   --   ( CautionLights.JFS_RUN)
 	------ECM Lamps
-	[102]=  "%.1f",   --  ECM Light
+	[102]=  "%1d",   --  ECM Light
+	[456]= "%.1f",
 	
 	[460]=  "%.1f",   --  BTN 1
 	[461]=  "%.1f",   --  BTN 1S
@@ -556,7 +557,7 @@ ExportScript.ConfigArguments =
 	
 	[401]  = "%1d",   --PTR-TWAP-BTN-PWR-401, RWR Indicator Control POWER Button, RWR Indicator Control POWER Button, , , (-1, 0, 1)
 	[140]  = "%.1f",   --PTR-CMSC-LVR-BRT-140, RWR Intensity Knob - Rotate to adjust brightness, RWR Intensity Knob - Rotate to adjust brightness, , , (0, 0, 0.8)
-	[404]  = "%1d",   --PTR-TWAP-LVR-DIM-404, RWR Indicator Control DIM Knob - Rotate to adjust brightness, RWR Indicator Control DIM Knob - Rotate to adjust brightness, , , (0, 0, 1)
+	[404]  = "%.1f",   --PTR-TWAP-LVR-DIM-404, RWR Indicator Control DIM Knob - Rotate to adjust brightness, RWR Indicator Control DIM Knob - Rotate to adjust brightness, , , (0, 0, 1)
 	[141]  = "%1d",   --PTR-CMSC-BTN-HNDOFF-141, RWR Indicator Control HANDOFF Button, RWR Indicator Control HANDOFF Button, , , (1, 0, 1)
 	[143]  = "%1d",   --PTR-CMSC-BTN-LNCH-143, RWR Indicator Control LAUNCH Button, RWR Indicator Control LAUNCH Button, , , (1, 0, 1)
 	[145]  = "%1d",   --PTR-CMSC-BTN-MODE-145, RWR Indicator Control MODE Button, RWR Indicator Control MODE Button, , , (1, 0, 1)
