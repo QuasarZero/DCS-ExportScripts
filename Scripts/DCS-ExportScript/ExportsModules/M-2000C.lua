@@ -676,7 +676,7 @@ ExportScript.ConfigArguments =
 	[570] = "%.1f",	--INS PREP Switch
 	[572] = "%.1f",	--INS DEST Switch
 	[574] = "%.1f",	--INS Parameter Selector
-	[575] = "%.4f",	--Light Brightnes Control/Test
+	[575] = "%.1f",	--Light Brightness Control/Test
 	[576] = "%.1f",	--Offset Waypoint/Target
 	[578] = "%.1f",	--INS Update
 	[580] = "%.1f",	--Validate Data Entry
@@ -792,7 +792,7 @@ ExportScript.ConfigArguments =
 
 -- Télé Affichage TAF - GCI
 	[968] = "%.2f",	--EVF Channel selector
-	[970] = "%.2f",	--EVF Panel Test
+	[970] = "%1d",	--EVF Panel Test
 
 -- Jumelles de Vision Nocturnes (JNV - NVG)
 	[672] = "%.1f",	--NVG lights Filter Switch
@@ -835,12 +835,12 @@ ExportScript.ConfigArguments =
 	[638] = "%.1f",	--ECS Defog Switch
 
 	-- Radio Panel
-	[429] = "%.1f",	--UHF Power 5W/25W Switch
-	[430] = "%.1f",	--UHF SIL Switch
-	[431] = "%.1f",	--UHF E-A2 Switch
-	[432] = "%.1f",	--UHF CDE Switch
-	[433] = "%.3f",	--UHF Mode Switch
-	[434] = "%.1f",	--UHF TEST Switch
+	[429] = "%1d",	--UHF Power 5W/25W Switch
+	[430] = "%1d",	--UHF SIL Switch
+	[431] = "%1d",	--UHF E-A2 Switch
+	[432] = "%1d",	--UHF CDE Switch
+	[433] = "%.2f",	--UHF Mode Switch
+	[434] = "%1d",	--UHF TEST Switch
 	[435] = "%.1f",	--UHF Knob
 	[441] = "%.1f",	--U/VHF Select 10 MHz
 	[442] = "%.1f",	--U/VHF Select 1 MHz
