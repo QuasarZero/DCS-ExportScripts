@@ -248,14 +248,14 @@ ExportScript.ConfigArguments =
 	[284] = "%.1f",	--VSTOL Master Mode Selector
 	[280] = "%.1f",	--AG Master Mode Selector
 	-- Engine Display Panel
-	[272] = "%.2f",	--EDP Brightness Control
+	[272] = "%.1f",	--EDP Brightness Control
 	[655] = "%1d",	--EDP BIT Button
 	-- HUD Control Panel
 	[288] = "%.4f",	--HUD
 	[289] = "%.4f",	--HUD Off/Brightness Control
 	[290] = "%.1f",	--HUD Display Mode Switch
-	[291] = "%.2f",	--HUD Video Brightness Control
-	[292] = "%.2f",	--HUD Video Contrast Control
+	[291] = "%.1f",	--HUD Video Brightness Control
+	[292] = "%.1f",	--HUD Video Contrast Control
 	[293] = "%1d",	--HUD Altitude Selector Switch
 	-- UFC Panel
 	[302] = "%1d",	--UFC Button 1
@@ -285,9 +285,9 @@ ExportScript.ConfigArguments =
 	[323] = "%1d",	--Radar Beacon Function Selector
 	[297] = "%1d",	--I/P Button
 	[309] = "%1d",	--Save Data Button
-	[295] = "%.2f",	--Display Brightness Control
-	[298] = "%.2f",	--Comm 1 Volume Control
-	[299] = "%.2f",	--Comm 2 Volume Control
+	[295] = "%.1f",	--Display Brightness Control
+	[298] = "%.1f",	--Comm 1 Volume Control
+	[299] = "%.1f",	--Comm 2 Volume Control
 	[300] = "%.4f",	--Comm 1 Channel Selector
 	[301] = "%.4f",	--Comm 2 Channel Selector
 	[178] = "%.4f",	--Comm 1 Channel Show Button
@@ -329,7 +329,7 @@ ExportScript.ConfigArguments =
 	[221] = "%1d",	--MPCD Left Display Symbology
 	[222] = "%1d",	--MPCD Left Display Gain
 	[223] = "%1d",	--MPCD Left Display Contrast
-	[194] = "%.2f",	--MPCD Left Off/Brightness Control
+	[194] = "%.1f",	--MPCD Left Off/Brightness Control
 	-- MPCD Right
 	[224] = "%1d",	--MPCD Right Button 1
 	[225] = "%1d",	--MPCD Right Button 2
@@ -355,7 +355,7 @@ ExportScript.ConfigArguments =
 	[245] = "%1d",	--MPCD Right Display Symbology
 	[246] = "%1d",	--MPCD Right Display Gain
 	[247] = "%1d",	--MPCD Right Display Contrast
-	[195] = "%.2f",	--MPCD Right Off/Brightness Control
+	[195] = "%.1f",	--MPCD Right Off/Brightness Control
 	-- Armament Control Panel ACP
 	[395] = "%.1f",	--Manual Release Control Knob
 	[396] = "%1d",	--Armament Mode Control
@@ -380,7 +380,7 @@ ExportScript.ConfigArguments =
 	[286] = "%1d",	--Launch Flare Salvo
 	[287] = "%1d",	--Master Arm Switch
 	-- ECM Control Panel
-	[273] = "%.2f",	--RWR Power/Volume Button
+	[273] = "%.1f",	--RWR Power/Volume Button
 	[274] = "%.1f",	--Decoy Dispenser Control
 	[275] = "%.1f",	--Jammer Control
 	-- Landing Gear/Flaps Control Panel
@@ -480,7 +480,7 @@ ExportScript.ConfigArguments =
 	[612] = "%.1f",	--Generator Switch
 	[613] = "%.1f",	--Battery Switch
 -- V/UHF Radio Panel
-	[614] = "%.2f",	--V/UHF RSC Volume Knob
+	[614] = "%.1f",	--V/UHF RSC Volume Knob
 	[615] = "%.3f",	--V/UHF RSC Chan/Freq Knob
 	[616] = "%.1f",	--V/UHF RSC Operational Mode Switch
 	[617] = "%1d",	--V/UHF RSC Ancillary Mode Pointer
@@ -497,18 +497,18 @@ ExportScript.ConfigArguments =
 	[627] = "%1d",	--KY-58 Codes Clear Switch
 	[628] = "%1d",	--KY-58 Remote Codes Load Switch
 -- ICS
-	[629] = "%.2f",	--ICS Aux Volume Knob
-	[630] = "%.2f",	--ICS Ground Volume Knob
+	[629] = "%.1f",	--ICS Aux Volume Knob
+	[630] = "%.1f",	--ICS Ground Volume Knob
 	[631] = "%.1f",	--ICS Mic Operational Mode Switch
 -- IFF
 	[632] = "%1d",	--IFF Operational Mode Switch
 	[633] = "%1d",	--IFF Crypto Mode Switch
 -- Interior Lights Panel
 	[634] = "%1d",	--Compass Light/Test Lights
-	[635] = "%.2f",	--Instruments Lights
-	[636] = "%.2f",	--Console Lights
-	[637] = "%.2f",	--Flood Lights
-	[638] = "%.2f",	--Annunciator Lights
+	[635] = "%.1f",	--Instruments Lights
+	[636] = "%.1f",	--Console Lights
+	[637] = "%.1f",	--Flood Lights
+	[638] = "%.1f",	--Annunciator Lights
 }
 
 -----------------------------
