@@ -322,9 +322,9 @@ ExportScript.ConfigEveryFrameArguments =
 
 -- 6b
 		-- Vertical Display Indicator (VDI)
-		[1037]  =  "%.2f",   -- HUD Brightness Control
-		[1036]  =  "%.2f",   -- VDI Brightness Control
-		[1038]  =  "%.2f",   -- VDI Contrast Control
+		[1037]  =  "%.1f",   -- HUD Brightness Control
+		[1036]  =  "%.1f",   -- VDI Brightness Control
+		[1038]  =  "%.1f",   -- VDI Contrast Control
 		[1033]  =  "%.2f",   -- FILTER Handle when pulled inserts filter for night ops
 		[1034]  =  "%.2f",   -- HUD Trim control for pitch lines
 		[1035]  =  "%.2f",   -- VDI Trim adjustment of pitch lines on VDI
@@ -350,7 +350,7 @@ ExportScript.ConfigEveryFrameArguments =
 
 -- 6c
 		-- Horizontal Situation Display Indicator (HSD)
-		[1043]  =  "%.2f",   -- BRT controls HSD Brightness
+		[1043]  =  "%.1f",   -- BRT controls HSD Brightness
 		[1039]  =  "%.4f",   -- HDG controls heading reference bug in TACAN mode
 		[1040]  =  "%.4f",   -- CRS controls cour in MAN and TACAN mode
 		[1041]  =  "%.4f",   -- TEST allows reset of HSD
