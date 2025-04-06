@@ -195,76 +195,76 @@ ExportScript.ConfigEveryFrameArguments =
 	]]
 
 -- LAMPS / DISPLAYS --------------------------------------
-	[185] = "%.1f",	--LIM, MIP,
-	[186] = "%.1f",	--IFF, MIP, Acc
-	[187] = "%.1f",	--LED green, ADI
-	[188] = "%.1f",	--LED green, ADI
+	[185] = "%1d",	--LIM, MIP,
+	[186] = "%1d",	--IFF, MIP, Acc
+	[187] = "%1d",	--LED green, ADI
+	[188] = "%1d",	--LED green, ADI
 
 -- VCM voyants (RWR)
-	[229] = "%.1f",	--V
-	[230] = "%.1f",	--BR
-	[231] = "%.1f",	--DA
-	[232] = "%.1f",	--D2M
-	[233] = "%.1f",	--LL
+	[229] = "%1d",	--V
+	[230] = "%1d",	--BR
+	[231] = "%1d",	--DA
+	[232] = "%1d",	--D2M
+	[233] = "%1d",	--LL
 
 -- Autopilot Controls/Indicator Lights
-	[267] = "%.1f",	--button P light
-	[268] = "%.1f",	--button MIS light
-	[270] = "%.1f",	--button AUT light
-	[271] = "%.1f",	--button MAN light
-	[273] = "%.1f",	--button MAG-P light
-	[274] = "%.1f",	--button MAG-MAG light
+	[267] = "%1d",	--button P light
+	[268] = "%1d",	--button MIS light
+	[270] = "%1d",	--button AUT light
+	[271] = "%1d",	--button MAN light
+	[273] = "%1d",	--button MAG-P light
+	[274] = "%1d",	--button MAG-MAG light
 
-	[280] = "%.1f",	--button TOT light
-	[281] = "%.1f",	--button PAP light
+	[280] = "%1d",	--button TOT light
+	[281] = "%1d",	--button PAP light
 
 -- Weapon panel
-	[236] = "%.1f",	--button1 S 001 light
-	[238] = "%.1f",	--button2 S 001 light
-	[240] = "%.1f",	--button3 S 001 light
-	[242] = "%.1f",	--button4 S 001 light
-	[244] = "%.1f",	--button5 S 001 light
+	[236] = "%1d",	--button1 S 001 light
+	[238] = "%1d",	--button2 S 001 light
+	[240] = "%1d",	--button3 S 001 light
+	[242] = "%1d",	--button4 S 001 light
+	[244] = "%1d",	--button5 S 001 light
 
-	[251] = "%.1f",	--button1 S 002 light
-	[252] = "%.1f",	--button1 P 002 light
-	[254] = "%.1f",	--button2 S 002 light
-	[255] = "%.1f",	--button2 P 002 light
-	[257] = "%.1f",	--button3 S 002 light
-	[258] = "%.1f",	--button3 P 002 light
-	[260] = "%.1f",	--button4 S 002 light
-	[261] = "%.1f",	--button4 P 002 light
-	[263] = "%.1f",	--button5 S 002 light
-	[264] = "%.1f",	--button5 P 002 light
+	[251] = "%1d",	--button1 S 002 light
+	[252] = "%1d",	--button1 P 002 light
+	[254] = "%1d",	--button2 S 002 light
+	[255] = "%1d",	--button2 P 002 light
+	[257] = "%1d",	--button3 S 002 light
+	[258] = "%1d",	--button3 P 002 light
+	[260] = "%1d",	--button4 S 002 light
+	[261] = "%1d",	--button4 P 002 light
+	[263] = "%1d",	--button5 S 002 light
+	[264] = "%1d",	--button5 P 002 light
 
-	[246] = "%.1f",	--button KL1 light
-	[247] = "%.1f",	--button KL2 light
+	[246] = "%1d",	--button KL1 light
+	[247] = "%1d",	--button KL2 light
 
-	[321] = "%.1f",	--ADI ILS light
-	[374] = "%.1f", --Fire light 1
-	[375] = "%.1f",	--Fire light 2
+	[321] = "%1d",	--ADI ILS light
+	[374] = "%1d", --Fire light 1
+	[375] = "%1d",	--Fire light 2
 
 -- AUTOPILOT lights
-	[283] = "%.1f",	--P
-	[284] = "%.1f",	--A
-	[286] = "%.1f",	--Alt 1
-	[287] = "%.1f",	--blank Alt
-	[289] = "%.1f",	--Alt 2
-	[290] = "%.1f",	--AFF
-	[292] = "%.1f",	--blank1
-	[293] = "%.1f",	--blank2
-	[295] = "%.1f", --left
-	[296] = "%.1f",	--blank L
-	[297] = "%.1f",	--G
-	[298] = "%.1f",	--blank G
+	[283] = "%1d",	--P
+	[284] = "%1d",	--A
+	[286] = "%1d",	--Alt 1
+	[287] = "%1d",	--blank Alt
+	[289] = "%1d",	--Alt 2
+	[290] = "%1d",	--AFF
+	[292] = "%1d",	--blank1
+	[293] = "%1d",	--blank2
+	[295] = "%1d", --left
+	[296] = "%1d",	--blank L
+	[297] = "%1d",	--G
+	[298] = "%1d",	--blank G
 
 -- div. lights
- 	[373] = "%.1f",	--Afterburner light
-	[376] = "%.1f",	--starter light
-	[198] = "%.1f",	--tranfer
+ 	[373] = "%1d",	--Afterburner light
+	[376] = "%1d",	--starter light
+	[198] = "%1d",	--tranfer
 
 -- Master Caution / Warning Lights
-	[199] = "%.1f",	--master-warning
-	[200] = "%.1f",	--master-caution
+	[199] = "%1d",	--master-warning
+	[200] = "%1d",	--master-caution
 -- INSTRUMENTS -------------------------------------------
 
 -- Display Settings
@@ -532,6 +532,10 @@ ExportScript.ConfigEveryFrameArguments =
 	[620] = "%.1f",	--	X/Y
 	[621] = "%.4f",	--	Drum XX0 left (--;1-12;--)
 	[622] = "%.4f",	--	Drum 00X right	(0;1-9;0)
+    [623] = "%.1f",	--TACAN Channel Change Tens
+    [624] = "%.1f",	--TACAN X/Y Select
+    [625] = "%.1f",	--TACAN Channel Change Ones
+    [626] = "%.1f",	--TACAN Mode Select
 
 
 	[632] = "%.1f",	--	Bouton avec voyant "C"
@@ -585,31 +589,31 @@ ExportScript.ConfigArguments =
 	[223] = "%.1f",	--VTB Switch
 
 -- PCA/PPA +++++++++++ HJP HBook Side 129
-	[463] = "%.1f",	--Gun Arm/Safe Switch
-	[234] = "%.1f",	--Master Arm Switch
-	[248] = "%.1f",	--Jett Switch Cover
-	[249] = "%.1f",	--Selective Jettison Switch
-	[235] = "%.1f",	--PCA Button 1
-	[237] = "%.1f",	--PCA Button 2
-	[239] = "%.1f",	--PCA Button 3
-	[241] = "%.1f",	--PCA Button 4
-	[243] = "%.1f",	--PCA Button 5
-	[245] = "%.1f",	--Gun Mode Selector
-	[250] = "%.1f",	--Weapons Selector Button 1
-	[253] = "%.1f",	--Weapons Selector Button 2
-	[256] = "%.1f",	--Weapons Selector Button 3
-	[259] = "%.1f",	--Weapons Selector Button 4
-	[262] = "%.1f",	--Weapons Selector Button 5
-	[266] = "%.1f",	--S530 Standby
-	[269] = "%.1f",	--AUTO/MAN Button
-	[272] = "%.1f",	--MAGIC Standby
-	[279] = "%.1f",	--Cannon Fire rate/Rockets Simul Launch
-	[265] = "%.1f",	--Missile Selector Switch
-	[275] = "%.1f",	--PPA Test Switch
+	[463] = "%1d",	--Gun Arm/Safe Switch
+	[234] = "%1d",	--Master Arm Switch
+	[248] = "%1d",	--Jett Switch Cover
+	[249] = "%1d",	--Selective Jettison Switch
+	[235] = "%1d",	--PCA Button 1
+	[237] = "%1d",	--PCA Button 2
+	[239] = "%1d",	--PCA Button 3
+	[241] = "%1d",	--PCA Button 4
+	[243] = "%1d",	--PCA Button 5
+	[245] = "%1d",	--Gun Mode Selector
+	[250] = "%1d",	--Weapons Selector Button 1
+	[253] = "%1d",	--Weapons Selector Button 2
+	[256] = "%1d",	--Weapons Selector Button 3
+	[259] = "%1d",	--Weapons Selector Button 4
+	[262] = "%1d",	--Weapons Selector Button 5
+	[266] = "%1d",	--S530 Standby
+	[269] = "%1d",	--AUTO/MAN Button
+	[272] = "%1d",	--MAGIC Standby
+	[279] = "%1d",	--Cannon Fire rate/Rockets Simul Launch
+	[265] = "%1d",	--Missile Selector Switch
+	[275] = "%1d",	--PPA Test Switch
 	[276] = "%.1f",	--Bomb Fuze Selector Switch
-	[277] = "%.1f",	--Bomb Release Quantity Selector Switch
-	[278] = "%.1f",	--Bomb Release Interval Selector Switch
-	[409] = "%.1f",	--Emergency Jettison
+	[277] = "%1d",	--Bomb Release Quantity Selector Switch
+	[278] = "%1d",	--Bomb Release Interval Selector Switch
+	[409] = "%1d",	--Emergency Jettison
 
 --AFCS
 	[282] = "%.1f",	--Autopilot Master
@@ -620,9 +624,9 @@ ExportScript.ConfigArguments =
 	[299] = "%.1f",	--Autopilot - Altitude Selector 10K
 	[300] = "%.1f",	--Autopilot - Altitude Selector 1K
 	[301] = "%.1f",	--Autopilot - Altitude Selector 1C
-	[514] = "%.1f",	--Autopilot Test Cover
-	[515] = "%.1f",	--Autopilot Test Switch
-	[516] = "%.1f",	--FBW Test Cover
+	[514] = "%1d",	--Autopilot Test Cover
+	[515] = "%1d",	--Autopilot Test Switch
+	[516] = "%1d",	--FBW Test Cover
 	[517] = "%.1f",	--FBW Test Switch
 
 --FBW
@@ -665,12 +669,12 @@ ExportScript.ConfigArguments =
 	[710] = "%.1f",	--TDC Mode
 
 -- ELECTRICAL PANEL
-	[520] = "%.1f",	--Main Battery Switch
-	[521] = "%.1f",	--Electric Power Transfer Switch
-	[522] = "%.1f",	--Alternator 1 Switch
-	[523] = "%.1f",	--Alternator 2 Switch
-	[524] = "%.1f",	--Lights Test Switch
-	[654] = "%.1f",	--Alert Network (QRA) Switch
+	[520] = "%1d",	--Main Battery Switch
+	[521] = "%1d",	--Electric Power Transfer Switch
+	[522] = "%1d",	--Alternator 1 Switch
+	[523] = "%1d",	--Alternator 2 Switch
+	[524] = "%1d",	--Lights Test Switch
+	[654] = "%1d",	--Alert Network (QRA) Switch
 
 -- PCN
 	[570] = "%.1f",	--INS PREP Switch
@@ -740,27 +744,27 @@ ExportScript.ConfigArguments =
 	[920] = "%.4f",	--Refuel Lights Brightness Knob
 
 -- Engine Start Panel
-	[468] = "%.1f",	--Engine In-Flight Start Switch
-	[467] = "%.1f",	--Engine Shutdown Button
-	[645] = "%.1f",	--Engine Start Switch Cover
-	[646] = "%.1f",	--Starter Fuel Pump Switch
-	[647] = "%.1f",	--Engine Fuel Left Boost Pump Switch
-	[648] = "%.1f",	--Engine Fuel Right Boost Pump Switch
-	[649] = "%.1f",	--Engine Start Switch
-	[650] = "%.1f",	--Ventilation Selector Switch
-	[651] = "%.1f",	--Fuel Cutoff Switch Cover
-	[652] = "%.1f",	--Fuel Cutoff Switch
-	[477] = "%.1f",	--Fuel Dump Switch Cover
-	[478] = "%.1f",	--Fuel Dump Switch
-	[471] = "%.1f",	--A/B Emergency Cutoff Switch Cover
-	[472] = "%.1f",	--A/B Emergency Cutoff Switch
-	[464] = "%.1f",	--Emergency Throttle Cover
-	[465] = "%.1f",	--Emergency Throttle Handle
-	[473] = "%.1f",	--Secondary Oil Control Cover
-	[474] = "%.1f",	--Secondary Oil Control Switch
-	[475] = "%.1f",	--Engine Emergency Control Cover
-	[476] = "%.1f",	--Engine Emergency Control Switch
-	[470] = "%.1f",	--Radar WOW Emitter Authorize Switch
+	[468] = "%1d",	--Engine In-Flight Start Switch
+	[467] = "%1d",	--Engine Shutdown Button
+	[645] = "%1d",	--Engine Start Switch Cover
+	[646] = "%1d",	--Starter Fuel Pump Switch
+	[647] = "%1d",	--Engine Fuel Left Boost Pump Switch
+	[648] = "%1d",	--Engine Fuel Right Boost Pump Switch
+	[649] = "%1d",	--Engine Start Switch
+	[650] = "%1d",	--Ventilation Selector Switch
+	[651] = "%1d",	--Fuel Cutoff Switch Cover
+	[652] = "%1d",	--Fuel Cutoff Switch
+	[477] = "%1d",	--Fuel Dump Switch Cover
+	[478] = "%1d",	--Fuel Dump Switch
+	[471] = "%1d",	--A/B Emergency Cutoff Switch Cover
+	[472] = "%1d",	--A/B Emergency Cutoff Switch
+	[464] = "%1d",	--Emergency Throttle Cover
+	[465] = "%1d",	--Emergency Throttle Handle
+	[473] = "%1d",	--Secondary Oil Control Cover
+	[474] = "%1d",	--Secondary Oil Control Switch
+	[475] = "%1d",	--Engine Emergency Control Cover
+	[476] = "%1d",	--Engine Emergency Control Switch
+	[470] = "%1d",	--Radar WOW Emitter Authorize Switch
 
 
 -- Navigational Antennas
@@ -769,17 +773,11 @@ ExportScript.ConfigArguments =
 	[618] = "%.2f",	--VOR/ILS Frequency Change Decimal
 	[619] = "%.1f",	--VOR/ILS Test Dial
 
--- TACAN
-	[623] = "%.1f",	--TACAN Channel Change Tens
-	[624] = "%.1f",	--TACAN X/Y Select
-	[625] = "%.1f",	--TACAN Channel Change Ones
-	[626] = "%.1f",	--TACAN Mode Select
-
 -- Miscelaneous Right Panel
-	[657] = "%.1f",	-- Hydraulic Emergency Pump Switch
-	[658] = "%.1f",    -- Audio Warning Switch
-	[659] = "%.1f",    -- Pitot Heat Cover
-	[660] = "%.1f",    -- Pitot Heat Switch
+	[657] = "%1d",	-- Hydraulic Emergency Pump Switch
+	[658] = "%1d",    -- Audio Warning Switch
+	[659] = "%1d",    -- Pitot Heat Cover
+	[660] = "%1d",    -- Pitot Heat Switch
 
 	-- Miscelaneous Left Panel
 	[191] = "%.1f",	--Audio Warning Reset
@@ -1022,6 +1020,23 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	ExportScript.Tools.SendData(2017, string.format("%s", lPCA_BR[3]))
 	ExportScript.Tools.SendData(2018, string.format("%s", lPCA_BR[4]))
 	ExportScript.Tools.SendData(2019, string.format("%s", lPCA_BR[5]))
+
+    local b1s = mainPanelDevice:get_argument_value(251)
+    local b1p = mainPanelDevice:get_argument_value(252)
+    local b2s = mainPanelDevice:get_argument_value(254)
+    local b2p = mainPanelDevice:get_argument_value(255)
+    local b3s = mainPanelDevice:get_argument_value(257)
+    local b3p = mainPanelDevice:get_argument_value(258)
+    local b4s = mainPanelDevice:get_argument_value(260)
+    local b4p = mainPanelDevice:get_argument_value(261)
+    local b5s = mainPanelDevice:get_argument_value(263)
+    local b5p = mainPanelDevice:get_argument_value(264)
+
+    ExportScript.Tools.SendData(2511, b1s .. b1p)
+    ExportScript.Tools.SendData(2541, b2s .. b2p)
+    ExportScript.Tools.SendData(2571, b3s .. b3p)
+    ExportScript.Tools.SendData(2601, b4s .. b4p)
+    ExportScript.Tools.SendData(2631, b5s .. b5p)
 
 	-- COM
 	local lCOM = list_indication(7)
