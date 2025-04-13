@@ -268,10 +268,10 @@ ExportScript.ConfigEveryFrameArguments =
 -- INSTRUMENTS -------------------------------------------
 
 -- Display Settings
-	--[224] = "%.1f",	--Drum X000
-	--[225] = "%.1f",	--Drum 0X00
-	--[226] = "%.1f",	--Drum 00X0
-	--[227] = "%.1f",	--Drum 000X
+	[224] = "%.1f",	--Drum X000
+	[225] = "%.1f",	--Drum 0X00
+	[226] = "%.1f",	--Drum 00X0
+	[227] = "%.1f",	--Drum 000X
 
 -- AUTOPILOT ALTITUDE SELECTOR: Adjust autopilot altitude hold value.
 	--[299] = "%.4f",	--Alt Drum X00
@@ -566,27 +566,27 @@ ExportScript.ConfigArguments =
 	[404] = "%.1f",	--Landing Gear Lever
 
 -- HUD/VTB
-	[201] = "%.1f",	--HUD Power Switch
-	[203] = "%.1f",	--HUD Decluter Switch
+	[201] = "%1d",	--HUD Power Switch
+	[203] = "%1d",	--HUD Decluter Switch
 	[204] = "%.1f",	--HUD Altimeter Selector Switch
 	[205] = "%.1f",	--Radar Altimeter Power Switch
 	[206] = "%.1f",	--Auxiliary Gunsight
 	[207] = "%.1f",	--Auxiliary Gunsight Deflection
-	[208] = "%.1f",	--Gun AG Reticle Selector
+	[208] = "%1d",	--Gun AG Reticle Selector
 	[209] = "%.1f",	--Gun Target Wingspan Selector
-	[210] = "%.1f",	--HUD Clear Switch
-	[192] = "%.4f",	--Radar Altimeter Minimum Altitude Selector
-	[213] = "%.1f",	--Radar Interception Switch
-	[214] = "%.1f",	--Radar N Parameter Switch
-	[215] = "%.1f",	--Radar P Parameter Switch
-	[216] = "%.1f",	--Radar B Parameter Switch
-	[217] = "%.1f",	--Radar C Parameter Switch
-	[218] = "%.1f",	--Radar Z Parameter Switch
-	[219] = "%.1f",	--Radar M Parameter Switch
-	[220] = "%.1f",	--Radar T Parameter Switch
-	[221] = "%.1f",	--VTB Power Switch
-	[222] = "%.1f",	--VTB Switch
-	[223] = "%.1f",	--VTB Switch
+	[210] = "%1d",	--HUD Clear Switch
+	[192] = "%.2f",	--Radar Altimeter Minimum Altitude Selector
+	[213] = "%1d",	--Radar Interception Switch
+	[214] = "%1d",	--Radar N Parameter Switch
+	[215] = "%1d",	--Radar P Parameter Switch
+	[216] = "%1d",	--Radar B Parameter Switch
+	[217] = "%1d",	--Radar C Parameter Switch
+	[218] = "%1d",	--Radar Z Parameter Switch
+	[219] = "%1d",	--Radar M Parameter Switch
+	[220] = "%1d",	--Radar T Parameter Switch
+	[221] = "%1d",	--VTB Power Switch
+	[222] = "%1d",	--VTB Switch
+	[223] = "%1d",	--VTB Switch
 
 -- PCA/PPA +++++++++++ HJP HBook Side 129
 	[463] = "%1d",	--Gun Arm/Safe Switch
@@ -639,7 +639,7 @@ ExportScript.ConfigArguments =
 
 -- PELLES, SOURIS AND BECS
 	[462] = "%.1f",	--Slats Operation Switch
-	[395] = "%.1f",	--Hydraulic System Selector
+	[395] = "%1d",	--Hydraulic System Selector
 	[396] = "%.1f",	--Pedal Adjust Lever
 
 -- RADAR
@@ -648,7 +648,7 @@ ExportScript.ConfigArguments =
 	[483] = "%.1f",	--Radar Rearm Switch
 	[484] = "%.1f",	--Radar Doppler Reject Selector
 	[486] = "%.1f",	--Radar Power Switch
-	[488] = "%.4f",	--Radar Gain Dial
+	[488] = "%.1f",	--Radar Gain Dial
 	[491] = "%.1f",	--A/G Radar A Mode
 	[493] = "%.1f",	--A/G Radar DEC Mode
 	[495] = "%.1f",	--A/G Radar VISU Mode
@@ -714,7 +714,7 @@ ExportScript.ConfigArguments =
 
 
 -- EW PANEL
-	[228] = "%.4f",	--RWR Light Brightnes Control
+	[228] = "%.1f",	--RWR Light Brightnes Control
 	[605] = "%.1f",	--EW Mode Selector Switch
 	[606] = "%.1f",	--BR Switch
 	[607] = "%.1f",	--RWR Switch
@@ -729,19 +729,19 @@ ExportScript.ConfigArguments =
 	[197] = "%.1f",	--ECM Box LCD Display Brightness
 
 -- Panel Lights
-	[449] = "%.1f",	--Police Lights
+	[449] = "%1d",	--Police Lights
 	[450] = "%.1f",	--Landing Lights
 	[452] = "%.1f",	--Refuel Lights
 	[453] = "%.1f",	--Anti-Collision Lights
 	[454] = "%.1f",	--Navigation Lights
 	[455] = "%.1f",	--Formation Lights
-	[639] = "%.4f",	--Dashboard Flood Lights
-	[640] = "%.4f",	--Dashboard Panel Lights
-	[641] = "%.4f",	--Console Flood Lights
-	[642] = "%.4f",	--Console Panel Lights
-	[643] = "%.4f",	--Casution/Advisory Lights Rheostat
-	[644] = "%.4f",	--White Flood Lights Knob
-	[920] = "%.4f",	--Refuel Lights Brightness Knob
+	[639] = "%.1f",	--Dashboard Flood Lights
+	[640] = "%.1f",	--Dashboard Panel Lights
+	[641] = "%.1f",	--Console Flood Lights
+	[642] = "%.1f",	--Console Panel Lights
+	[643] = "%.1f",	--Casution/Advisory Lights Rheostat
+	[644] = "%.1f",	--White Flood Lights Knob
+	[920] = "%.1f",	--Refuel Lights Brightness Knob
 
 -- Engine Start Panel
 	[468] = "%1d",	--Engine In-Flight Start Switch
@@ -793,11 +793,11 @@ ExportScript.ConfigArguments =
 	[970] = "%1d",	--EVF Panel Test
 
 -- Jumelles de Vision Nocturnes (JNV - NVG)
-	[672] = "%.1f",	--NVG lights Filter Switch
+	[672] = "%1d",	--NVG lights Filter Switch
 
 
 -- Sound Panel
-	[700] = "%.1f",	--AMPLIS Selector
+	[700] = "%1d",	--AMPLIS Selector
 	[701] = "%.1f",	--VOR/ILS Volume {0.0,1.0} in 0.1 steps
 	[702] = "%.1f",	--TACAN Volume {0.0,1.0} in 0.1 steps
 	[703] = "%.1f",	--MAGIC Tone Volume {0.0,1.0} in 0.1 steps
@@ -819,18 +819,18 @@ ExportScript.ConfigArguments =
 	[386] = "%.1f",	--Mode-3A Switch
 	[387] = "%.1f",	--Mode-C Switch
 -- Miscelaneous Seat
-	[900] = "%.1f",	--Seat Adjustment Switch
-	[910] = "%.1f",	--LOX Dilution Lever
-	[912] = "%.1f",	--LOX Emergency Supply
+	[900] = "%1d",	--Seat Adjustment Switch
+	[910] = "%1d",	--LOX Dilution Lever
+	[912] = "%1d",	--LOX Emergency Supply
 	[911] = "%.1f",	--LOX Test Switch
 -- ECS Panel
-	[630] = "%.1f",	--ECS Main Mode Switch
-	[631] = "%.1f",	--ECS C Button
-	[633] = "%.1f",	--ECS F Button
-	[635] = "%.1f",	--ECS Cond Switch
-	[636] = "%.1f",	--ECS Air Exchange Switch
+	[630] = "%1d",	--ECS Main Mode Switch
+	[631] = "%1d",	--ECS C Button
+	[633] = "%1d",	--ECS F Button
+	[635] = "%1d",	--ECS Cond Switch
+	[636] = "%1d",	--ECS Air Exchange Switch
 	[637] = "%.1f",	--ECS Temperature Select Knob {-1.0,1.0} in 0.1 steps
-	[638] = "%.1f",	--ECS Defog Switch
+	[638] = "%1d",	--ECS Defog Switch
 
 	-- Radio Panel
 	[429] = "%1d",	--UHF Power 5W/25W Switch
@@ -1371,26 +1371,26 @@ end
 	--[225] = "%.4f",	--Drum 0X00
 	--[226] = "%.4f",	--Drum 00X0
 	--[227] = "%.4f",	--Drum 000X
-	digits = {}
-	digits[1] = mainPanelDevice:get_argument_value(224) * 10
-	digits[2] = mainPanelDevice:get_argument_value(225) * 10
-	digits[3] = mainPanelDevice:get_argument_value(226) * 10
-	digits[4] = mainPanelDevice:get_argument_value(227) * 10
-	digits[1] = (digits[1] > 7 and 7 or digits[1])
-	digits[2] = (digits[2] > 7 and 7 or digits[2])
-	digits[3] = (digits[3] > 7 and 7 or digits[3])
-	digits[4] = (digits[4] > 7 and 7 or digits[4])
-	ExportScript.Tools.SendData(224, string.format("%1.0f",digits[1]))
-	ExportScript.Tools.SendData(225, string.format("%1.0f",digits[2]))
-	ExportScript.Tools.SendData(226, string.format("%1.0f",digits[3]))
-	ExportScript.Tools.SendData(227, string.format("%1.0f",digits[4]))
-
-	if ExportScript.Config.Debug then
-		ExportScript.Tools.WriteToLog('224: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(224) * 10)))
-		ExportScript.Tools.WriteToLog('225: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(225) * 10)))
-		ExportScript.Tools.WriteToLog('226: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(226) * 10)))
-		ExportScript.Tools.WriteToLog('227: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(227) * 10)))
-	end
+-- 	digits = {}
+-- 	digits[1] = mainPanelDevice:get_argument_value(224) * 10
+-- 	digits[2] = mainPanelDevice:get_argument_value(225) * 10
+-- 	digits[3] = mainPanelDevice:get_argument_value(226) * 10
+-- 	digits[4] = mainPanelDevice:get_argument_value(227) * 10
+-- 	digits[1] = (digits[1] > 7 and 7 or digits[1])
+-- 	digits[2] = (digits[2] > 7 and 7 or digits[2])
+-- 	digits[3] = (digits[3] > 7 and 7 or digits[3])
+-- 	digits[4] = (digits[4] > 7 and 7 or digits[4])
+-- 	ExportScript.Tools.SendData(224, string.format("%1.0f",digits[1]))
+-- 	ExportScript.Tools.SendData(225, string.format("%1.0f",digits[2]))
+-- 	ExportScript.Tools.SendData(226, string.format("%1.0f",digits[3]))
+-- 	ExportScript.Tools.SendData(227, string.format("%1.0f",digits[4]))
+--
+-- 	if ExportScript.Config.Debug then
+-- 		ExportScript.Tools.WriteToLog('224: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(224) * 10)))
+-- 		ExportScript.Tools.WriteToLog('225: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(225) * 10)))
+-- 		ExportScript.Tools.WriteToLog('226: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(226) * 10)))
+-- 		ExportScript.Tools.WriteToLog('227: '..ExportScript.Tools.dump(string.format("%1.0f",mainPanelDevice:get_argument_value(227) * 10)))
+-- 	end
 
   -- engine % (cleaned up from float stored in DCS ID 369)
   local lEngine_percent = ""
