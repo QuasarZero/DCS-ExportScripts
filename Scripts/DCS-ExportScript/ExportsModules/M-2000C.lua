@@ -426,6 +426,7 @@ ExportScript.ConfigEveryFrameArguments =
 	[677] = "%.1f",	--	Left green lamp
 
 -- Compass
+	[905] = "%1d",	-- Emergency Compass
 	[906] = "%.4f",	--Rose
 
 -- Oxygen
