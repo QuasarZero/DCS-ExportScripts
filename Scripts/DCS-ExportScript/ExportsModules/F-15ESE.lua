@@ -562,7 +562,7 @@ ExportScript.ConfigArguments =	-- arguments for export in low tick interval base
 			[514]	= "%1d",	-- PILOT Radio Cypher Text Switch  ( DEVICE_ID: 17 DCS_ID: 3514)
 			[513]	= "%1d",	-- PILOT Radio Tone Switch  ( DEVICE_ID: 17 DCS_ID: 3513)
 			[511]	= "%1d",	-- PILOT Radio UHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3511)
-			[512]	= "%1d",	-- PILOT Radio VHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3512
+			[512]	= "%1d",	-- PILOT Radio VHF Antenna Switch  ( DEVICE_ID: 17 DCS_ID: 3512)
 		--  Right MPD
 			[245]	= "%.1f",	-- PILOT Right MPD Brightness Control  ( DEVICE_ID: 36 DCS_ID: 3082)
 			[246]	= "%.1f",	-- PILOT Right MPD Contrast Control  ( DEVICE_ID: 36 DCS_ID: 3083)
