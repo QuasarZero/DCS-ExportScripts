@@ -400,7 +400,7 @@ ExportScript.ConfigArguments =
 	[577] = "%.1f",	-- RWR Indicator Control AUDIO Knob (Axis) {0.0, 1.0} in 0.1 Steps
 	[578] = "%.1f",	-- RWR Indicator Control DIM Knob (Axis) {0.0, 1.0} in 0.1 Steps
 	-- AN/ALR-87 RWR
-	[140] = "%.2f",	-- Adjust Display Brightness (Axis) {0.15, 0.85} in 0.1 Steps
+	[140] = "%.1f",	-- Adjust Display Brightness (Axis) {0.15, 0.85} in 0.1 Steps
 	-- Instruments --------------------------
 	-- Accelerometer
 	[904] = "%1d",	-- Accelerometer - Push to set
@@ -489,7 +489,7 @@ ExportScript.ConfigArguments =
 	[257] = "%.1f",	-- TACAN Channel Selector (Ones) / X/Y Mode - Right mouse click to select X/Y. Rotate mouse wheel to make channel selection (Axis) {0.0, 1.0} in 0.1 Steps
 	[258] = "%.2f",	-- TACAN Channel Selector (Ones) / X/Y Mode - Right mouse click to select X/Y. Rotate mouse wheel to make channel selection (Button) {0.87, 0.93}
 	[259] = "%1d",	-- TACAN Signal on HSI Test Button
-	[261] = "%1d",	-- TACAN Signal Volume Knob (Axis) {0.0, 1.0} in 0.1 Steps
+	[261] = "%.1f",	-- TACAN Signal Volume Knob (Axis) {0.0, 1.0} in 0.1 Steps
 	[262] = "%.1f",	-- TACAN Mode Selector Switch {0.0, 0.1, 0.2, 0.3, 0.4}
 	-- Sight Camera
 	[82] = "%.1f",	-- Sight Camera Lens f-Stop Selector, 2.8(dull)..22(bright) (Axis) {0.0, 0.3} in 0.1 Steps
