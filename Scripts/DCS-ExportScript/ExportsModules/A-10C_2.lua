@@ -375,7 +375,7 @@ ExportScript.ConfigArguments =
 	-- ILS
 	[247] = "%1d",     -- PTR-ILSCP-PWR Power
 	[248] = "%0.1f",   -- PTR-ILSCP-PWR ILS Frequency MHz
-	[249] = "%.3f",    -- PTR-ILSCP-VOL ILS Frequency kHz
+	[249] = "%.1f",    -- PTR-ILSCP-VOL ILS Frequency kHz
 	[250] = "%0.1f",   -- PTR-ILSCP-VOL Volume
 	[251] = "%0.1f",   -- ILS_window_wheel_MHz
 	[252] = "%0.1f",   -- ILS_window_wheel_KHz
@@ -383,8 +383,8 @@ ExportScript.ConfigArguments =
 	[256] = "%.1f",	   -- Channel Selector (Tens). Rotate mouse wheel to select (Axis) {0.0,1.0} in 0.1 steps
 	[257] = "%0.2f",   -- Channel Selector (Ones) / X/Y Mode. Rotate mouse wheel to make channel selection (Axis) {0.0,1.0} in 0.1 steps
 	[258] = "%1d",     -- Channel Selector (Ones) / X/Y Mode. Right mouse click to select X/Y.
-	[259] = "%.1f",    -- PTR-TACAN-TEST (Test TACAN Signal on HSI)
-	[261] = "%.3f",    -- PTR-TACAN-VOL (Signal Volume) (Axis) {0.0,1.0} in 0.1 steps
+	[259] = "%1d",    -- PTR-TACAN-TEST (Test TACAN Signal on HSI)
+	[261] = "%.1f",    -- PTR-TACAN-VOL (Signal Volume) (Axis) {0.0,1.0} in 0.1 steps
 	[262] = "%0.1f",   -- PTR-TACAN-MODE (Mode Dial) {0.0,0.1,0.2,0.3,0.4}
 	[263] = "%.1f",    -- TACAN_digit_pos.hundreds
 	[264] = "%.1f",    -- TACAN_digit_pos.tens
@@ -822,17 +822,18 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 
 	-- AN/ARC-164 UHF and UHF Preset Channel
 	---------------------------------------------------
-	local lUHF_RADIO = GetDevice(54)
-	if lUHF_RADIO:is_on() then
-		ExportScript.Tools.SendData(2000, ExportScript.Tools.RoundFreqeuncy((lUHF_RADIO:get_frequency()/1000000)))
-
-		local lPresetChannel = ExportScript.Tools.getListIndicatorValue(10)
-
-		ExportScript.Tools.SendData(2001, string.format("%s", lPresetChannel.txtPresetChannel))
-	else
-		ExportScript.Tools.SendData(2000, " ")
-		ExportScript.Tools.SendData(2001, " ")
-	end
+-- Quasar: invalid
+-- 	local lUHF_RADIO = GetDevice(54)
+-- 	if lUHF_RADIO:is_on() then
+-- 		ExportScript.Tools.SendData(2000, ExportScript.Tools.RoundFreqeuncy((lUHF_RADIO:get_frequency()/1000000)))
+--
+-- 		local lPresetChannel = ExportScript.Tools.getListIndicatorValue(10)
+--
+-- 		ExportScript.Tools.SendData(2001, string.format("%s", lPresetChannel.txtPresetChannel))
+-- 	else
+-- 		ExportScript.Tools.SendData(2000, " ")
+-- 		ExportScript.Tools.SendData(2001, " ")
+-- 	end
 
 	-- AN/ARC-186(V) VHF AM and Preset Channel
 	---------------------------------------------------
@@ -903,6 +904,11 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 		ExportScript.Tools.SendData(2019,  string.format("%s", lCMSP.txt_DOWN2))
 		ExportScript.Tools.SendData(2020,  string.format("%s", lCMSP.txt_DOWN3))
 		ExportScript.Tools.SendData(2021,  string.format("%s", lCMSP.txt_DOWN4))
+
+        ExportScript.Tools.SendData(12014,  string.format("%s", lCMSPTable[1].."\n"..lCMSP.txt_DOWN1))
+        ExportScript.Tools.SendData(12015,  string.format("%s", lCMSPTable[2].."\n"..lCMSP.txt_DOWN2))
+        ExportScript.Tools.SendData(12016,  string.format("%s", lCMSPTable[3].."\n"..lCMSP.txt_DOWN3))
+        ExportScript.Tools.SendData(12017,  string.format("%s", lCMSPTable[4].."\n"..lCMSP.txt_DOWN4))
 	else
 		ExportScript.Tools.SendData(2014,  " ")
 		ExportScript.Tools.SendData(2015,  " ")
