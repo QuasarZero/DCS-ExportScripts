@@ -266,6 +266,32 @@ ExportScript.ConfigArguments =
 	[130] = "%1d",     -- PTR-LCP-RDRALTM (Radar Altimeter Normal/Disabled)
 	[131] = "%.1f",    -- PTR-LCP-AUTOPILOT-ENGAGE (Autopilot Engage/Disengage)
 	[132] = "%1d",     -- PTR-LCP-AUTOPILOT-PATH-ALT (Autopilot Mode Select Switch)
+
+	-- AN/ARC-210
+    [534] = "%.2f",
+    [551] = "%.2f",
+    [552] = "%.2f",
+    [553] = "%.2f",
+    [554] = "%.2f",
+    [555] = "%.2f",
+    [556] = "%.2f",
+    [557] = "%.2f",
+    [558] = "%.2f",
+    [559] = "%.2f",
+    [560] = "%.2f",
+    [561] = "%.2f",
+    [562] = "%.2f",
+    [563] = "%.2f",
+    [564] = "%.2f",
+    [565] = "%.2f",
+    [566] = "%.2f",
+    [567] = "%.2f",
+    [568] = "%.2f",
+    [569] = "%.2f",
+    [570] = "%.2f",
+    [571] = "%.2f",
+    [572] = "%.2f",
+    [573] = "%.2f",
 	-- ANARC186-VHF_AM
 	-- AM Radio
 	[133] = "%.3f",    -- PTR-ANARC186-VHFAM-VOLUME (Volume)
@@ -301,7 +327,7 @@ ExportScript.ConfigArguments =
 	[168] = "%0.1f",   -- PTR-ANARC164-FUNCTION (Function Dial)
 	[169] = "%1d",     -- PTR-ANARC164-T-TONE (T-Tone)
 	[170] = "%1d",     -- PTR-ANARC164-SQUELCH (Squelch)
-	[171] = "%.3f",    -- PTR-ANARC164-VOLUME (Volume)
+	[171] = "%.1f",    -- PTR-ANARC164-VOLUME (Volume)
 	[172] = "%.1f",    -- PTR-ANARC164-TEST-DISPLAY (Test Display)
 	[173] = "%.1f",    -- PTR-ANARC164-STATUS (Status)
 	[734] = "%1d",     -- PTR-ANARC164-COVER
