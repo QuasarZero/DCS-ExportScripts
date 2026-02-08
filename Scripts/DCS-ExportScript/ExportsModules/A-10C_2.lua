@@ -848,18 +848,17 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 
 	-- AN/ARC-164 UHF and UHF Preset Channel
 	---------------------------------------------------
+
+	local lUHF_RADIO = GetDevice(54)
+	if lUHF_RADIO:is_on() then
+		ExportScript.Tools.SendData(2000, ExportScript.Tools.RoundFreqeuncy((lUHF_RADIO:get_frequency()/1000000)))
 -- Quasar: invalid
--- 	local lUHF_RADIO = GetDevice(54)
--- 	if lUHF_RADIO:is_on() then
--- 		ExportScript.Tools.SendData(2000, ExportScript.Tools.RoundFreqeuncy((lUHF_RADIO:get_frequency()/1000000)))
---
 -- 		local lPresetChannel = ExportScript.Tools.getListIndicatorValue(10)
---
 -- 		ExportScript.Tools.SendData(2001, string.format("%s", lPresetChannel.txtPresetChannel))
--- 	else
--- 		ExportScript.Tools.SendData(2000, " ")
--- 		ExportScript.Tools.SendData(2001, " ")
--- 	end
+	else
+		ExportScript.Tools.SendData(2000, " ")
+		ExportScript.Tools.SendData(2001, " ")
+	end
 
 	-- AN/ARC-186(V) VHF AM and Preset Channel
 	---------------------------------------------------
