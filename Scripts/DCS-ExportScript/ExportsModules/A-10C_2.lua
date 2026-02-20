@@ -754,7 +754,7 @@ ExportScript.ConfigArguments =
 	[707] = "%1d",     -- UHF - antenna switch
 	[708] = "%1d",     -- EGI HQ TOD
 	-- RWR
-	[16] = "%.4f",     -- RWR Adjust Display Brightness {0.15, 0.85} in 0.1 steps
+	[16] = "%.1f",     -- RWR Adjust Display Brightness {0.15, 0.85} in 0.1 steps
 
 	-- HMCS
 	[550] = "%1d",     -- HMCS Switch (1,0,-1)
