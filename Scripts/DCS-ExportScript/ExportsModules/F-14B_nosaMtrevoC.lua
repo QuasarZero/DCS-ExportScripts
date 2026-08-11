@@ -1173,17 +1173,18 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	1.0000 = GUARD
 	]]
 
-	-- 9 159 base
-	-- 10 159 pilot
-	-- 11 159 rio
-	-- 12 159 list
-	-- 13 182 base
-	-- 14 182 pilot
+	-- 10 159 base
+	-- 11 159 base pilot
+	-- 12 159 base rio
+	-- 13 159 list
+	-- 14 182 base
+	-- 15 182 pilot
 
-	local UHF_ARC159_infoBase = ExportScript.Tools.split(list_indication(9), "%c")--this contains the formated table of the base radio
+	local UHF_ARC159_infoBase = ExportScript.Tools.split(list_indication(10), "%c")--this contains the formated table of the base radio
 	local UHF_ARC159_readoutBase = UHF_ARC159_infoBase[10] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
 	local UHF_ARC159_inRead = string.format("%1d", mainPanelDevice:get_argument_value(8115))
+
 
 	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
 		ExportScript.Tools.SendData(60000, string.format("ARC-159\n" .. UHF_ARC159_readoutBase:sub(1,3) .. "." .. UHF_ARC159_readoutBase:sub(4,6)))
@@ -1194,8 +1195,8 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	end
 
 
-	local UHF_ARC159_infoPilot = ExportScript.Tools.split(list_indication(10), "%c")--this contains the formated table of the Pilot radio
-	local UHF_ARC159_readoutPilot = UHF_ARC159_infoPilot[16] -- so far it has always been 10 in both channel and freq modes
+	local UHF_ARC159_infoPilot = ExportScript.Tools.split(list_indication(11), "%c")--this contains the formated table of the Pilot radio
+	local UHF_ARC159_readoutPilot = UHF_ARC159_infoPilot[10] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
 
 	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
@@ -1207,8 +1208,8 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	end
 
 
-	local UHF_ARC159_infoRio = ExportScript.Tools.split(list_indication(11), "%c")--this contains the formated table of the Rio radio
-	local UHF_ARC159_readoutRio = UHF_ARC159_infoRio[16] -- so far it has always been 10 in both channel and freq modes
+	local UHF_ARC159_infoRio = ExportScript.Tools.split(list_indication(12), "%c")--this contains the formated table of the Rio radio
+	local UHF_ARC159_readoutRio = UHF_ARC159_infoRio[10] -- so far it has always been 10 in both channel and freq modes
 	local UHF_ARC159_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(2033))
 
 	if UHF_ARC159_FreqMode == "1.0" or UHF_ARC159_FreqMode == "0.5" or UHF_ARC159_inRead == "1" then
@@ -1231,7 +1232,7 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 	1.0 = LOAD?
 	]]
 
-	local VHF_ARC182_infoBase = ExportScript.Tools.split(list_indication(13), "%c")--this contains the formated table of the base radio
+	local VHF_ARC182_infoBase = ExportScript.Tools.split(list_indication(15), "%c")--this contains the formated table of the base radio
 	local VHF_ARC182_readoutBase = VHF_ARC182_infoBase[10] -- so far it has always been 10 in both channel and freq modes
 	local VHF_ARC182_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(353))
 
@@ -1251,7 +1252,7 @@ function ExportScript.ProcessIkarusDCSConfigHighImportance(mainPanelDevice)
 
 
 	local VHF_ARC182_infoPilot = ExportScript.Tools.split(list_indication(14), "%c")--this contains the formated table of the base radio
-	local VHF_ARC182_readoutPilot = VHF_ARC182_infoPilot[16] -- so far it has always been 10 in both channel and freq modes
+	local VHF_ARC182_readoutPilot = VHF_ARC182_infoPilot[10] -- so far it has always been 10 in both channel and freq modes
 	local VHF_ARC182_FreqMode = string.format("%0.1f", mainPanelDevice:get_argument_value(353))
 
 	if VHF_ARC182_FreqMode == "0.0" or VHF_ARC182_FreqMode == "0.2" then
