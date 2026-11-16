@@ -243,7 +243,7 @@ ExportScript.ConfigEveryFrameArguments =
 	-- RadioCommunicator R-800
 	---------------------------------------------------
 	[419] = "%0.1f", 		-- Radio_Test_lamp {0.0,1.0}
-	[577] = "%.3f", 		-- R800Rotary1 {0.0,1.0}
+	[577] = "%.2f", 		-- R800Rotary1 {0.0,1.0}
 	[574] = "%.2f", 		-- R800Rotary2 {0.0,1.0}
 	[575] = "%.2f", 		-- R800Rotary3 {0.0,1.0}
 	[576] = "%.2f", 		-- R800Rotary4 {0.0,1.0}
@@ -631,7 +631,7 @@ ExportScript.ConfigArguments =
 	[267] = "%1d",         -- RAMP-POWER-PTR (AC ground power)
 	[268] = "%1d",         -- GEN-LEFT-PTR (AC left generator)
 	[269] = "%1d",         -- GEN-RIGHT-PTR (AC right generator)
-	[270] = "%01.f",       -- CONVERTER-PTR (DC/AC inverter) {0.0, 0.2}
+	[270] = "%0.1f",       -- CONVERTER-PTR (DC/AC inverter) {0.0, 0.2}
 	-- FUEL SYSTEM
 	[271] = "%1d",         -- FUEL-PUMP-FRONT-PTR (Forward fuel tank pumps)
 	[272] = "%1d",         -- FUEL-PUMP-BACK-PTR (Rear fuel tank pumps)
