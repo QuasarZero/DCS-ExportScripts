@@ -268,7 +268,7 @@ ExportScript.ConfigArguments =
 	[132] = "%1d",     -- PTR-LCP-AUTOPILOT-PATH-ALT (Autopilot Mode Select Switch)
 	-- ANARC186-VHF_AM
 	-- AM Radio
-	[133] = "%.3f",    -- PTR-ANARC186-VHFAM-VOLUME (Volume)
+	[133] = "%.1f",    -- PTR-ANARC186-VHFAM-VOLUME (Volume)
 	[134] = "%1d",     -- PTR-ANARC186-VHFAM-SQUELCH (Squelch / TONE)
 	[135] = "%0.1f",   -- PTR-ANARC186-VHFAM-FREQEMER-CONTROL (Frequency Selection Dial)
 	[136] = "%.1f",    -- PTR-ANARC186-VHFAM-LOAD (Load)
@@ -279,7 +279,7 @@ ExportScript.ConfigArguments =
 	[141] = "%0.2f",   -- PTR-ANARC186-VHFAM-FREQ-3 (Frequency Selector the 3nd)
 	[142] = "%0.2f",   -- PTR-ANARC186-VHFAM-FREQ-4 (Frequency Selector the 4nd)
 	-- FM Radio
-	[147] = "%.3f",    -- PTR-ANARC186-VHFFM-VOLUME (Volume)
+	[147] = "%.1f",    -- PTR-ANARC186-VHFFM-VOLUME (Volume)
 	[148] = "%1d",     -- PTR-ANARC186-VHFFM-SQUELCH (Squelch / TONE)
 	[149] = "%0.1f",   -- PTR-ANARC186-VHFFM-FREQEMER-CONTROL (Frequency Selection Dial)
 	[150] = "%.1f",    -- PTR-ANARC186-VHFFM-LOAD (Load)
@@ -481,7 +481,7 @@ ExportScript.ConfigArguments =
 	[356] = "%1d",     -- PNT-BTN-CMSP-BRT-UP/DN (Cycle Program or Value Up/Down)
 	[357] = "%.1f",    -- PNT-BTN-CMSP-RTN (Save and Return Program)
 	[358] = "%1d",     -- PNT-TMB-CMSP-JTSN (Jettison Countermeasures)
-	[359] = "%.3f",    -- PNT-LEV-CMSP-BRT (Adjust Display Brightness)
+	[359] = "%.1f",    -- PNT-LEV-CMSP-BRT (Adjust Display Brightness)
 	[360] = "%0.1f",   -- PNT-TMB-CMSP-MWS (Missile Warning System (MWS). Left mouse - ON/OFF, Right mouse - MENU (No Function))
 	[361] = "%0.1f",   -- PNT-TMB-CMSP-JMR (Electronic Countermeasure Jammer (JMR). Left mouse - ON/OFF, Right mouse - MENU (No Function))
 	[362] = "%0.1f",   -- PNT-TMB-CMSP-RWR (Radar Warning Receiver (RWR). Left mouse - ON/OFF, Right mouse - MENU)
@@ -490,8 +490,8 @@ ExportScript.ConfigArguments =
 	-- CMSC
 	[365] = "%.1f",    -- PNT-BTN-RWR-JMR (Select Jammer Program)
 	[366] = "%.1f",    -- PNT-BTN-RWR-MWS (Cycle Missile Warning System Programs. No function)
-	[367] = "%.3f",    -- PNT-LEV-RWR-BRT (Adjust Display Brightness)
-	[368] = "%.3f",    -- PNT-LEV-RWR-AUD (Adjust RWR Volume)
+	[367] = "%.1f",    -- PNT-LEV-RWR-BRT (Adjust Display Brightness)
+	[368] = "%.1f",    -- PNT-LEV-RWR-AUD (Adjust RWR Volume)
 	[369] = "%.1f",    -- PNT-BTN-RWR-PRI (Toggle between 5 and 16 Priority Threats Displayed)
 	[370] = "%.1f",    -- PNT-BTN-RWR-SEP (Separate RWR Symbols)
 	[371] = "%.1f",    -- PNT-BTN-RWR-UNK (Display Unknown Threats)
@@ -728,7 +728,7 @@ ExportScript.ConfigArguments =
 	[707] = "%1d",     -- UHF - antenna switch
 	[708] = "%1d",     -- EGI HQ TOD
 	-- RWR
-	[16] = "%.4f",     -- RWR Adjust Display Brightness {0.15, 0.85} in 0.1 steps	
+	[16] = "%.1f",     -- RWR Adjust Display Brightness {0.15, 0.85} in 0.1 steps
 }
 
 -----------------------------
@@ -808,9 +808,8 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 	if lUHF_RADIO:is_on() then
 		ExportScript.Tools.SendData(2000, ExportScript.Tools.RoundFreqeuncy((lUHF_RADIO:get_frequency()/1000000)))
 		
-		local lPresetChannel = ExportScript.Tools.getListIndicatorValue(10)
-
-		ExportScript.Tools.SendData(2001, string.format("%s", lPresetChannel.txtPresetChannel))
+-- 		local lPresetChannel = ExportScript.Tools.getListIndicatorValue(10)
+-- 		ExportScript.Tools.SendData(2001, string.format("%s", lPresetChannel.txtPresetChannel))
 	else
 		ExportScript.Tools.SendData(2000, " ")
 		ExportScript.Tools.SendData(2001, " ")
@@ -897,6 +896,11 @@ function ExportScript.ProcessIkarusDCSConfigLowImportance(mainPanelDevice)
 		ExportScript.Tools.SendData(2019,  string.format("%s", lCMSP.txt_DOWN2))
 		ExportScript.Tools.SendData(2020,  string.format("%s", lCMSP.txt_DOWN3))
 		ExportScript.Tools.SendData(2021,  string.format("%s", lCMSP.txt_DOWN4))
+
+        ExportScript.Tools.SendData(12014,  string.format("%s", lCMSPTable[1].."\n"..lCMSP.txt_DOWN1))
+        ExportScript.Tools.SendData(12015,  string.format("%s", lCMSPTable[2].."\n"..lCMSP.txt_DOWN2))
+        ExportScript.Tools.SendData(12016,  string.format("%s", lCMSPTable[3].."\n"..lCMSP.txt_DOWN3))
+        ExportScript.Tools.SendData(12017,  string.format("%s", lCMSPTable[4].."\n"..lCMSP.txt_DOWN4))
 	else
 		ExportScript.Tools.SendData(2014,  " ")
 		ExportScript.Tools.SendData(2015,  " ")
