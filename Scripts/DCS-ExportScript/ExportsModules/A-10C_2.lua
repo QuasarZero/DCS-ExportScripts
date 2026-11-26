@@ -268,7 +268,7 @@ ExportScript.ConfigArguments =
 	[132] = "%1d",     -- PTR-LCP-AUTOPILOT-PATH-ALT (Autopilot Mode Select Switch)
 
 	-- AN/ARC-210
-    [534] = "%.2f",
+    [534] = "%1d",     -- ufc comm2
     [551] = "%.1f",    -- master select
     [552] = "%.2f",    -- channel
     [553] = "%.1f",    -- second select
@@ -277,21 +277,21 @@ ExportScript.ConfigArguments =
     [556] = "%.1f",    -- freq 1MHz
     [557] = "%.1f",    -- freq 100KHz
     [558] = "%.1f",    -- freq 25KHz
-    [559] = "%.2f",
-    [560] = "%.2f",
-    [561] = "%.2f",
-    [562] = "%.2f",
-    [563] = "%.2f",
-    [564] = "%.2f",
-    [565] = "%.2f",
-    [566] = "%.2f",
-    [567] = "%.2f",
-    [568] = "%1d",
-    [569] = "%.2f",
-    [570] = "%.2f",
-    [571] = "%.2f",
-    [572] = "%.2f",
-    [573] = "%.2f",
+    [559] = "%1d",     -- bright dec
+    [560] = "%1d",     -- bright inc
+    [561] = "%1d",     -- lsk 3
+    [562] = "%1d",     -- lsk 2
+    [563] = "%1d",     -- lsk 1
+    [564] = "%1d",     -- tod snd
+    [565] = "%1d",     -- tod rcv
+    [566] = "%1d",     -- gps
+    [567] = "%1d",     -- rt select
+    [568] = "%1d",     -- sql
+    [569] = "%1d",     -- menu time
+    [570] = "%1d",     -- am/fm
+    [571] = "%1d",     -- xmt/rcv send
+    [572] = "%1d",     -- offset rcv
+    [573] = "%1d",     -- enter
 	-- ANARC186-VHF_AM
 	-- AM Radio
 	[133] = "%.3f",    -- PTR-ANARC186-VHFAM-VOLUME (Volume)
